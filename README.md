@@ -8,7 +8,7 @@ Unser Projekt fürs [Ludum Dare 47](https://ldjam.com/).
 
 Das Projekt wird nach den einzelnen modularen Features und Themen in Ordner sortiert.
 
-Weiterhin werden die **Ordnernamen** und **Szenendateiennamen** im `UpperCamelCase` und in Einzahl, währenddessen die zugehörigen Scriptdateinamen im `pascal_case` gehalten werden.
+Weiterhin werden die **Ordnernamen** und **Szenendateiennamen** im `UpperCamelCase` und in Einzahl, währenddessen die zugehörigen **Scriptdateinamen** und **Assets** im `pascal_case` gehalten werden.
 
 **Graphiken, Sounds und anderweitige Assets** werden zum Code direkt in die **passenden** Unterordner gepackt, neue Unterordner sind im Normalfall nicht notwendig, außer es handelt sich um eine extreme Menge an neuen Assets, die irgendwie sortiert oder gebändigt werden müssten.  
 *Faustregel: Alles unter 3 Asset-Dateien braucht keine Extra-Unterordner.*
@@ -24,6 +24,7 @@ Die Projektstruktur könnte dann also beispielsweise so aussehen:
 ```
 .
 ├───Monster
+|   |   monster.gd
 │   ├───Dragon
 │   │   │   dragon.gd
 │   │   │   dragon.png
@@ -38,7 +39,7 @@ Die Projektstruktur könnte dann also beispielsweise so aussehen:
 │   │           howl.gd
 │   │           idle.gd
 │   ├───Elephant
-│   │   │   elelphant_colorless.png
+│   │   │   elephant_colorless.png
 │   │   │   elephant.gd
 │   │   │   Elephant.tscn
 │   │   │   elephant_horn.ogg
@@ -60,8 +61,8 @@ Die Projektstruktur könnte dann also beispielsweise so aussehen:
 
 ## Codekonventionen
 
-Ansonsten folgen wir den [GDScript Richtlinien, die in der Godot-Dokumentation beschrieben sind] (https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_styleguide.html)
+Ansonsten folgen wir den [GDScript Richtlinien, die in der Godot-Dokumentation beschrieben sind](https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_styleguide.html)
 
-Und zusätzlich den [Best Practices von GDQuest] (https://www.gdquest.com/docs/guidelines/best-practices/godot-gdscript/)
+Und zusätzlich den [Best Practices von GDQuest](https://www.gdquest.com/docs/guidelines/best-practices/godot-gdscript/)
 
 Bitte nehmt euch bevor ihr mit eurer Arbeit startet einen Moment Zeit und schaut euch diese an.
