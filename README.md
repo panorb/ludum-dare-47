@@ -8,7 +8,7 @@ Unser Projekt fürs [Ludum Dare 47](https://ldjam.com/).
 
 Das Projekt wird nach den einzelnen modularen Features und Themen in Ordner sortiert.
 
-Weiterhin werden die **Ordnernamen** und **Szenendateiennamen** im `UpperCamelCase` und in Einzahl, währenddessen die zugehörigen **Scriptdateinamen** und **Assets** im `pascal_case` gehalten werden.
+Weiterhin werden die **Ordnernamen** und **Szenendateiennamen** im `UpperCamelCase` und in Einzahl, währenddessen die zugehörigen **Scriptdateinamen** und **Assets** im `snake_case` gehalten werden.
 
 **Graphiken, Sounds und anderweitige Assets** werden zum Code direkt in die **passenden** Unterordner gepackt, neue Unterordner sind im Normalfall nicht notwendig, außer es handelt sich um eine extreme Menge an neuen Assets, die irgendwie sortiert oder gebändigt werden müssten.  
 *Faustregel: Alles unter 3 Asset-Dateien braucht keine Extra-Unterordner.*
@@ -58,6 +58,9 @@ Die Projektstruktur könnte dann also beispielsweise so aussehen:
 └───Shared
         fire_burn.ogg
 ```
+
+## Branching
+Für neue Branches folgen folgenden Konventionen, wenn ein neues Feature entwickelt wird erstellen wir einen neuen Branch der mit `dev-` und dann dem englischen Featurenamen in `kebab-case` d.h. bspw `dev-main-menu` oder `dev-dragon-monster`.
 
 ## Codekonventionen
 
