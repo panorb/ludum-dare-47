@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="LD47 Game"
 config/icon="res://icon.png"
 
+[autoload]
+
+SoundController="*res://Autoloads/sound_controller.gd"
+
 [display]
 
 window/dpi/allow_hidpi=true
