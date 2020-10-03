@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Levels/RecordPlayerFront/record_player_front.gd" type="Script" id=1]
-[ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/combination_lock_front.png" type="Texture" id=2]
+[ext_resource path="res://Levels/RecordPlayerFront/record_player_front.png" type="Texture" id=2]
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/CombinationLock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/RecordPlayerFront/RecordPlayerNeedle.tscn" type="PackedScene" id=4]
 
@@ -33,10 +33,10 @@ __meta__ = {
 }
 
 [node name="CombinationLock" parent="CanvasLayer/Control/CenterContainer" instance=ExtResource( 3 )]
-margin_left = 1887.0
-margin_top = 1046.0
-margin_right = 1952.0
-margin_bottom = 1114.0
+margin_left = 1885.0
+margin_top = 1058.0
+margin_right = 1954.0
+margin_bottom = 1102.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 

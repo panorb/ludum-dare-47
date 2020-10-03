@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/combination_lock_front.png-c7b2643ef0789d6104c8892be69cc4d3.stex"
+path="res://.import/record_player_front.png-baddb1df215ddf6245fad985ae389f3c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/RecordPlayerFront/CombinationLock/combination_lock_front.png"
-dest_files=[ "res://.import/combination_lock_front.png-c7b2643ef0789d6104c8892be69cc4d3.stex" ]
+source_file="res://Levels/RecordPlayerFront/record_player_front.png"
+dest_files=[ "res://.import/record_player_front.png-baddb1df215ddf6245fad985ae389f3c.stex" ]
 
 [params]
 
