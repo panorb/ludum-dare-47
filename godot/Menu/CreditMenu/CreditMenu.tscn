@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Menu/CreditMenu/credit_menu.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "CreditsScroll"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:margin_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 28 ),
+"transitions": PoolRealArray( 1.1487, 1.1487 ),
+"update": 0,
+"values": [ 0, -120 ]
+}
+
+[node name="CreditMenu" type="ColorRect"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 415.0
+margin_bottom = 201.0
+text = "bajfbsajbjbfsjfbjaskfbjkabsjfbjsakbasbfjksabfajksbasjsabjkafsbjfbjk
+asfsaf
+f
+
+asf
+saf
+saf
+as
+fsa
+
+fs
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/CreditsScroll = SubResource( 1 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
