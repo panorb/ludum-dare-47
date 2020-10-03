@@ -1,3 +1,7 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/CombinationLock.tscn" type="PackedScene" id=1]
 
 [node name="RecordPlayerFront" type="Node2D"]
+
+[node name="CombinationLock" parent="." instance=ExtResource( 1 )]
