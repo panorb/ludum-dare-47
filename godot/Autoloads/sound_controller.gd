@@ -26,6 +26,9 @@ func _ready() -> void:
 		_effect[i].connect("finished", self, "sig_effect_finished")
 		add_child(_effect[i])
 
+func pub_get_audio_effect_player(channel: int) -> AudioStreamPlayer:
+	return _effect[channel]
+
 func pub_play_music(path:String, should_loop: bool = true) -> void:
 	var stream = load(path)
 	# AudioServer.set_bus_mute(1, true)
