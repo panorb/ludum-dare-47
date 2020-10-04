@@ -35,9 +35,10 @@ func pub_play_music(path:String, should_loop: bool = true) -> void:
 	_loop=should_loop
 
 
-func pub_play_effect(path:String, channel: int = 0) -> void:
+func pub_play_effect(path:String, channel: int = 0, volume_db : int = -12) -> void:
 	var stream = load(path)
 	# AudioServer.set_bus_mute(1, true)
+	_effect[channel].volume_db = volume_db
 	_effect[channel].stop()
 	_effect[channel].stream = stream
 	_effect[channel].play()
