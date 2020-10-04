@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/letter_appears.ogg-238ce15c0b279c2db85273b913a11c0b.oggstr"
+
+[deps]
+
+source_file="res://Levels/RecordPlayerFront/Letters/letter_appears.ogg"
+dest_files=[ "res://.import/letter_appears.ogg-238ce15c0b279c2db85273b913a11c0b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

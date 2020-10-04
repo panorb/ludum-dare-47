@@ -50,7 +50,7 @@ margin_bottom = -120.0
 [node name="MusicMix" type="Node" parent="."]
 script = ExtResource( 6 )
 bgm_unsolved = "res://Shared/static_noise.ogg"
-bgm_solved = "res://testmusic/song2.ogg"
+bgm_solved = "res://Levels/RecordPlayerFront/CombinationLock/combination_lock.ogg"
 distance_fade_start = 80
 
 [node name="Tween" type="Tween" parent="MusicMix"]
