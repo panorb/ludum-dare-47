@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Levels/RecordPlayerFront/record_player_front.gd" type="Script" id=1]
-[ext_resource path="res://Levels/RecordPlayerFront/record_player_front.png" type="Texture" id=2]
+[ext_resource path="res://Levels/RecordPlayerFront/base.png" type="Texture" id=2]
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/CombinationLock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/RecordPlayerFront/RecordPlayerNeedle.tscn" type="PackedScene" id=4]
 
@@ -16,21 +16,8 @@ texture = ExtResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CombinationLock" parent="CanvasLayer/Control" instance=ExtResource( 3 )]
-margin_left = 1933.95
-margin_top = 1552.69
-margin_right = 2208.95
-margin_bottom = 1904.69
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
 [node name="RecordPlayerNeedle" parent="." instance=ExtResource( 4 )]
 position = Vector2( 3136.76, 718.967 )
 scale = Vector2( 3, 3 )
+
+[node name="CombinationLock" parent="." instance=ExtResource( 3 )]
