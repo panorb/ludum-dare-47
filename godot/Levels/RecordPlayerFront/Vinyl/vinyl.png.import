@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/schallplatte.png-7d95267327783b229dbd568233c9691e.stex"
+path="res://.import/vinyl.png-9a2238f254e39b100c7254f432c8b7db.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/RecordPlayerFront/schallplatte.png"
-dest_files=[ "res://.import/schallplatte.png-7d95267327783b229dbd568233c9691e.stex" ]
+source_file="res://Levels/RecordPlayerFront/Vinyl/vinyl.png"
+dest_files=[ "res://.import/vinyl.png-9a2238f254e39b100c7254f432c8b7db.stex" ]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/combination_lock.gd" type="Script" id=1]
 [ext_resource path="res://Shared/IBMPlexSans-Light.ttf" type="DynamicFontData" id=2]
@@ -20,6 +20,52 @@ font_data = ExtResource( 2 )
 size = 128
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 48
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "d1tod3"
+length = 0.7
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("active Digit:margin_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 703, -0.25, 0, 0, 457.443, 1135, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7 )
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "d2tod1"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("active Digit:margin_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 920, -0.25, 0, 0, -228.238, 703, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "d3tod2"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("active Digit:margin_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1135, -0.25, 0, 0, -223.874, 920, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
 [node name="CombinationLock" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -39,12 +85,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Digit" type="Label" parent="VBoxContainer"]
 margin_right = 800.0
 margin_bottom = 235.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.0980392, 0.0941176, 0.0980392, 1 )
 text = "000"
 align = 1
 
@@ -86,6 +132,25 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 4 )
 text = "+"
+
+[node name="active Digit" type="Label" parent="."]
+margin_left = 120.0
+margin_top = 1506.0
+margin_right = 703.0
+margin_bottom = 1577.21
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.0980392, 0.0941176, 0.0980392, 1 )
+text = "^"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DigitAnimation" type="AnimationPlayer" parent="."]
+autoplay = "d1tod3"
+anims/d1tod3 = SubResource( 10 )
+anims/d2tod1 = SubResource( 11 )
+anims/d3tod2 = SubResource( 7 )
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/ButtonSubtract" to="." method="_on_ButtonSubtract_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/ButtonMode" to="." method="_on_ButtonMode_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/ButtonAdd" to="." method="_on_ButtonAdd_pressed"]
