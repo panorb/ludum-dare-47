@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Menu/MainMenu/music_fading_debug.gd" type="Script" id=1]
 [ext_resource path="res://Menu/MainMenu/main_menu.gd" type="Script" id=8]
 
 [node name="MainMenu" type="MarginContainer"]
@@ -49,32 +48,8 @@ margin_left = 208.0
 margin_right = 243.0
 margin_bottom = 44.0
 text = "Exit"
-
-[node name="MusicFadingDebug" type="Control" parent="."]
-margin_right = 243.0
-margin_bottom = 44.0
-script = ExtResource( 1 )
-
-[node name="StartMusicButton" type="Button" parent="MusicFadingDebug"]
-margin_left = 247.0
-margin_right = 330.0
-margin_bottom = 44.0
-text = "Start Music"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CrossfadeButton" type="Button" parent="MusicFadingDebug"]
-margin_left = 334.0
-margin_right = 408.0
-margin_bottom = 44.0
-text = "Crossfade"
-
-[node name="Tween" type="Tween" parent="MusicFadingDebug"]
 [connection signal="pressed" from="Menu/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/LoadGameButton" to="." method="_on_LoadGameButton_pressed"]
 [connection signal="pressed" from="Menu/CenterContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="Menu/CenterContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Menu/ExitButton" to="." method="_on_ExitButton_pressed"]
-[connection signal="pressed" from="MusicFadingDebug/StartMusicButton" to="MusicFadingDebug" method="_on_StartMusicButton_pressed"]
-[connection signal="pressed" from="MusicFadingDebug/CrossfadeButton" to="MusicFadingDebug" method="_on_CrossfadeButton_pressed"]
