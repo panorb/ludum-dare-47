@@ -24,7 +24,7 @@ Die Projektstruktur könnte dann also beispielsweise so aussehen:
 ```
 .
 ├───Monster
-|   |   monster.gd
+│   │   monster.gd
 │   ├───Dragon
 │   │   │   dragon.gd
 │   │   │   dragon.png
@@ -60,7 +60,12 @@ Die Projektstruktur könnte dann also beispielsweise so aussehen:
 ```
 
 ## Branching
-Für neue Branches folgen folgenden Konventionen, wenn ein neues Feature entwickelt wird erstellen wir einen neuen Branch der mit `dev-` und dann dem englischen Featurenamen in `kebab-case` d.h. bspw `dev-main-menu` oder `dev-dragon-monster`.
+Für neue Branches folgen folgenden Konventionen eingehalten: 
+- Wenn ein neues Feature entwickelt wird erstellen wir einen neuen Branch der mit `dev-` und dann dem englischen Featurenamen in `kebab-case`
+- **Beispiele:** `dev-main-menu` oder `dev-dragon-monster`.
+
+## Leo
+Die Ordnerstruktur im root-Ordner ist fucked. Sortier mal.
 
 ## Codekonventionen
 
