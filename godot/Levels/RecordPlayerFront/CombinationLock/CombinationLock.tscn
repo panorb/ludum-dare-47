@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/combination_lock.gd" type="Script" id=1]
 [ext_resource path="res://Shared/IBMPlexSans-Light.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/speedcontrol.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 128
+size = 180
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -20,72 +21,136 @@ size = 128
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 128
+size = 48
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
-size = 128
-font_data = ExtResource( 2 )
+[sub_resource type="Animation" id=10]
+resource_name = "d1tod3"
+length = 0.7
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("active Digit:margin_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 703, -0.25, 0, 0, 457.443, 1135, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7 )
+}
 
-[node name="CombinationLock" type="VBoxContainer"]
-margin_right = 49.0
-margin_bottom = 20.0
+[sub_resource type="Animation" id=11]
+resource_name = "d2tod1"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("active Digit:margin_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 920, -0.25, 0, 0, -228.238, 703, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "d3tod2"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("active Digit:margin_right")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1135, -0.25, 0, 0, -223.874, 920, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[node name="CombinationLock" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ContainerDigits" type="HBoxContainer" parent="."]
-margin_right = 275.0
-margin_bottom = 174.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_bottom = 1.0
+margin_left = 120.0
+margin_top = 1330.0
+margin_right = 920.0
+margin_bottom = -280.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Digit1" type="Button" parent="ContainerDigits"]
-margin_right = 89.0
-margin_bottom = 174.0
+[node name="Digit" type="Label" parent="VBoxContainer"]
+margin_right = 800.0
+margin_bottom = 235.0
+size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
-disabled = true
-text = "1"
+custom_colors/font_color = Color( 0.0980392, 0.0941176, 0.0980392, 1 )
+text = "000"
+align = 1
 
-[node name="Digit2" type="Button" parent="ContainerDigits"]
-margin_left = 93.0
-margin_right = 182.0
-margin_bottom = 174.0
+[node name="ButtonContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 239.0
+margin_right = 800.0
+margin_bottom = 550.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonSubtract" type="Button" parent="VBoxContainer/ButtonContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 264.0
+margin_bottom = 311.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
-disabled = true
-text = "2"
-
-[node name="Digit3" type="Button" parent="ContainerDigits"]
-margin_left = 186.0
-margin_right = 275.0
-margin_bottom = 174.0
-custom_fonts/font = SubResource( 3 )
-disabled = true
-text = "3"
-
-[node name="ContainerContainer" type="HBoxContainer" parent="."]
-margin_top = 178.0
-margin_right = 275.0
-margin_bottom = 352.0
-
-[node name="ButtonSubtract" type="Button" parent="ContainerContainer"]
-margin_right = 63.0
-margin_bottom = 174.0
-custom_fonts/font = SubResource( 4 )
 text = "-"
 
-[node name="ButtonMode" type="Button" parent="ContainerContainer"]
-margin_left = 67.0
-margin_right = 182.0
-margin_bottom = 174.0
-custom_fonts/font = SubResource( 5 )
+[node name="ButtonMode" type="Button" parent="VBoxContainer/ButtonContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 268.0
+margin_right = 532.0
+margin_bottom = 311.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
 text = "M"
 
-[node name="ButtonAdd" type="Button" parent="ContainerContainer"]
-margin_left = 186.0
-margin_right = 275.0
-margin_bottom = 174.0
-custom_fonts/font = SubResource( 6 )
+[node name="ButtonAdd" type="Button" parent="VBoxContainer/ButtonContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 536.0
+margin_right = 800.0
+margin_bottom = 311.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 4 )
 text = "+"
-[connection signal="pressed" from="ContainerContainer/ButtonSubtract" to="." method="_on_ButtonSubtract_pressed"]
-[connection signal="pressed" from="ContainerContainer/ButtonMode" to="." method="_on_ButtonMode_pressed"]
-[connection signal="pressed" from="ContainerContainer/ButtonAdd" to="." method="_on_ButtonAdd_pressed"]
+
+[node name="active Digit" type="Label" parent="."]
+margin_left = 120.0
+margin_top = 1506.0
+margin_right = 703.0
+margin_bottom = 1577.21
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.0980392, 0.0941176, 0.0980392, 1 )
+text = "^"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DigitAnimation" type="AnimationPlayer" parent="."]
+autoplay = "d1tod3"
+anims/d1tod3 = SubResource( 10 )
+anims/d2tod1 = SubResource( 11 )
+anims/d3tod2 = SubResource( 7 )
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/ButtonSubtract" to="." method="_on_ButtonSubtract_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/ButtonMode" to="." method="_on_ButtonMode_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/ButtonAdd" to="." method="_on_ButtonAdd_pressed"]

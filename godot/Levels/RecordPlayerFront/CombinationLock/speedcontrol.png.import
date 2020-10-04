@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/needle.png-5e80f06be5ad3a75858500149f57f220.stex"
+path="res://.import/speedcontrol.png-ce648e28cda40b03f3d9e2758fe58d67.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/RecordPlayerFront/needle.png"
-dest_files=[ "res://.import/needle.png-5e80f06be5ad3a75858500149f57f220.stex" ]
+source_file="res://Levels/RecordPlayerFront/CombinationLock/speedcontrol.png"
+dest_files=[ "res://.import/speedcontrol.png-ce648e28cda40b03f3d9e2758fe58d67.stex" ]
 
 [params]
 
