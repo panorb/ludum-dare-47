@@ -1,53 +1,50 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Levels/RecordPlayerFront/record_player_front.gd" type="Script" id=1]
-[ext_resource path="res://Levels/RecordPlayerFront/record_player_front.png" type="Texture" id=2]
+[ext_resource path="res://Levels/RecordPlayerFront/base.png" type="Texture" id=2]
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/CombinationLock.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/RecordPlayerFront/RecordPlayerNeedle.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Levels/RecordPlayerFront/letter.gd" type="Script" id=5]
-[ext_resource path="res://Levels/RecordPlayerFront/Letters/letter.jpg" type="Texture" id=6]
+[ext_resource path="res://Levels/RecordPlayerFront/RecordPlayerNeedle/RecordPlayerNeedle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/RecordPlayerFront/Vinyl/Vinyl.tscn" type="PackedScene" id=5]
 
-[node name="RecordPlayerFront" type="Node2D"]
-position = Vector2( -16.8188, 92.5043 )
+[node name="RecordPlayerFront" type="Control"]
 script = ExtResource( 1 )
-
-[node name="Backdrop" type="Sprite" parent="."]
-position = Vector2( 1920, 1080 )
-scale = Vector2( 1.4, 1.4 )
-texture = ExtResource( 2 )
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CombinationLock" parent="CanvasLayer/Control" instance=ExtResource( 3 )]
-margin_left = 1933.95
-margin_top = 1552.69
-margin_right = 2208.95
-margin_bottom = 1904.69
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2000.0
+margin_top = -2000.0
+margin_right = 8000.0
+margin_bottom = 4000.0
+color = Color( 0.937255, 0.937255, 0.937255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="RecordPlayerNeedle" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3136.76, 718.967 )
-scale = Vector2( 3, 3 )
+[node name="RecordPlayer" type="Node2D" parent="."]
+position = Vector2( 200, 83 )
 
-[node name="Letter" type="Sprite" parent="."]
-position = Vector2( 3698.93, 1910.62 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 6 )
-script = ExtResource( 5 )
+[node name="Backdrop" type="Sprite" parent="RecordPlayer"]
+position = Vector2( 1680, 1000 )
+texture = ExtResource( 2 )
 
-[node name="LetterText" type="Label" parent="Letter"]
-margin_left = -313.0
-margin_top = -313.0
-margin_right = 313.0
-margin_bottom = 313.0
-rect_clip_content = true
-autowrap = true
-clip_text = true
+[node name="CanvasLayer" type="CanvasLayer" parent="RecordPlayer"]
+
+[node name="Vinyl" parent="RecordPlayer" instance=ExtResource( 5 )]
+position = Vector2( 2059.76, 991.161 )
+
+[node name="RecordPlayerNeedle" parent="RecordPlayer" instance=ExtResource( 4 )]
+position = Vector2( 3077.86, 273.307 )
+
+[node name="CombinationLock" parent="RecordPlayer" instance=ExtResource( 3 )]
+margin_right = 1040.0
+margin_bottom = 2000.0
+
+[node name="VBoxContainer" parent="RecordPlayer/CombinationLock" index="0"]
+margin_bottom = -120.0
+[connection signal="code_correct" from="RecordPlayer/CombinationLock" to="." method="_on_CombinationLock_code_correct"]
+
+[editable path="RecordPlayer/CombinationLock"]
