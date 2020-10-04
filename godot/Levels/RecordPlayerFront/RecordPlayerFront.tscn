@@ -1,18 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Levels/RecordPlayerFront/record_player_front.gd" type="Script" id=1]
 [ext_resource path="res://Levels/RecordPlayerFront/record_player_front.png" type="Texture" id=2]
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/CombinationLock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/RecordPlayerFront/RecordPlayerNeedle.tscn" type="PackedScene" id=4]
-[ext_resource path="res://StateMachine/outro.gd" type="Script" id=5]
-[ext_resource path="res://StateMachine/main_menu.gd" type="Script" id=6]
-[ext_resource path="res://StateMachine/level_3.gd" type="Script" id=7]
-[ext_resource path="res://StateMachine/level_2.gd" type="Script" id=8]
-[ext_resource path="res://StateMachine/exit.gd" type="Script" id=9]
-[ext_resource path="res://StateMachine/level_1.gd" type="Script" id=10]
-[ext_resource path="res://StateMachine/init.gd" type="Script" id=11]
-[ext_resource path="res://StateMachine/state_machine.gd" type="Script" id=12]
-[ext_resource path="res://StateMachine/intro.gd" type="Script" id=13]
 
 [node name="RecordPlayerFront" type="Node2D"]
 position = Vector2( -16.8188, 92.5043 )
@@ -43,30 +34,3 @@ size_flags_vertical = 3
 [node name="RecordPlayerNeedle" parent="." instance=ExtResource( 4 )]
 position = Vector2( 3136.76, 718.967 )
 scale = Vector2( 3, 3 )
-
-[node name="StateMachine" type="Node" parent="."]
-script = ExtResource( 12 )
-
-[node name="Init" type="Node" parent="StateMachine"]
-script = ExtResource( 11 )
-
-[node name="Intro" type="Node" parent="StateMachine"]
-script = ExtResource( 13 )
-
-[node name="MainMenu" type="Node" parent="StateMachine"]
-script = ExtResource( 6 )
-
-[node name="Exit" type="Node" parent="StateMachine"]
-script = ExtResource( 9 )
-
-[node name="Level1" type="Node" parent="StateMachine"]
-script = ExtResource( 10 )
-
-[node name="Level2" type="Node" parent="StateMachine"]
-script = ExtResource( 8 )
-
-[node name="Level3" type="Node" parent="StateMachine"]
-script = ExtResource( 7 )
-
-[node name="Outro" type="Node" parent="StateMachine"]
-script = ExtResource( 5 )
