@@ -24,11 +24,11 @@ font_data = ExtResource( 2 )
 size = 48
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=6]
 resource_name = "d1tod3"
 length = 0.7
 tracks/0/type = "bezier"
-tracks/0/path = NodePath("active Digit:margin_right")
+tracks/0/path = NodePath("ActiveDigit:margin_right")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -38,11 +38,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.7 )
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=7]
 resource_name = "d2tod1"
 length = 0.5
 tracks/0/type = "bezier"
-tracks/0/path = NodePath("active Digit:margin_right")
+tracks/0/path = NodePath("ActiveDigit:margin_right")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -52,11 +52,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 )
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "d3tod2"
+[sub_resource type="Animation" id=8]
 length = 0.5
 tracks/0/type = "bezier"
-tracks/0/path = NodePath("active Digit:margin_right")
+tracks/0/path = NodePath("ActiveDigit:margin_right")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -133,7 +132,7 @@ size_flags_vertical = 3
 custom_fonts/font = SubResource( 4 )
 text = "+"
 
-[node name="active Digit" type="Label" parent="."]
+[node name="ActiveDigit" type="Label" parent="."]
 margin_left = 120.0
 margin_top = 1506.0
 margin_right = 703.0
@@ -148,9 +147,9 @@ __meta__ = {
 
 [node name="DigitAnimation" type="AnimationPlayer" parent="."]
 autoplay = "d1tod3"
-anims/d1tod3 = SubResource( 10 )
-anims/d2tod1 = SubResource( 11 )
-anims/d3tod2 = SubResource( 7 )
+anims/d1tod3 = SubResource( 6 )
+anims/d2tod1 = SubResource( 7 )
+anims/d3tod2 = SubResource( 8 )
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/ButtonSubtract" to="." method="_on_ButtonSubtract_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/ButtonMode" to="." method="_on_ButtonMode_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/ButtonAdd" to="." method="_on_ButtonAdd_pressed"]
