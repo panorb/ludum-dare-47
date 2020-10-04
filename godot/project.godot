@@ -28,6 +28,7 @@ config/icon="res://icon.png"
 
 SoundController="*res://Autoloads/sound_controller.gd"
 StateMachineScene="*res://StateMachine/StateMachine.tscn"
+SceneChanger="*res://SceneChanger/SceneChanger.tscn"
 
 [display]
 
