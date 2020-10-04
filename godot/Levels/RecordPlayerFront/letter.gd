@@ -1,4 +1,4 @@
-extends Sprite
+extends Control
 
 func _ready():
 	print("Sprite entered the scene!")

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/letter.jpg-e165b7ca3ec4ac3af3f22eb49dad45d8.stex"
+path="res://.import/letter.jpg-92d2055e32fa3894603ed6d62126903e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/RecordPlayerFront/Letters/letter.jpg"
-dest_files=[ "res://.import/letter.jpg-e165b7ca3ec4ac3af3f22eb49dad45d8.stex" ]
+source_file="res://Shared/LetterUI/letter.jpg"
+dest_files=[ "res://.import/letter.jpg-92d2055e32fa3894603ed6d62126903e.stex" ]
 
 [params]
 
