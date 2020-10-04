@@ -54,6 +54,12 @@ func pub_crossfade_music_channels(channel_from : int, channel_to : int):
 	_tween.interpolate_property(to, "volume_db", null, DEFAULT_MUSIC_VOLUME, 0.5, Tween.TRANS_LINEAR)
 	_tween.start()
 
+func pub_set_music_volume_db(channel: int, volume_db: int):
+	_music[channel].volume_db = volume_db
+
+func pub_set_effect_volume_db(channel: int, volume_db: int):
+	_effect[channel].volume_db = volume_db
+
 func pub_play_effect(path:String, channel: int = 0, \
 	volume_db : int = DEFAULT_EFFECT_VOLUME) -> void:
 	
