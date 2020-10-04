@@ -8,8 +8,8 @@ var _music: AudioStreamPlayer
 var _loop: bool = true
 
 # Settings that should be put into an Options script
-var _music_volume:int = -12
-var _effects_volume:int = -12
+var _music_volume: int = -12
+var _effects_volume: int = -12
 
 
 func _ready() -> void:
@@ -19,14 +19,14 @@ func _ready() -> void:
 	_music.connect("finished",self,"sig_music_finished")
 	add_child(_music)
 
-	for i in range(0,EFFECT_LAYERS):
+	for i in range(0, EFFECT_LAYERS):
 		_effect.append(AudioStreamPlayer.new())
 		_effect[i].volume_db= _effects_volume
 		_effect[i].bus = str("Effects",i)
 		_effect[i].connect("finished", self, "sig_effect_finished")
 		add_child(_effect[i])
 
-func pub_crossfade_music(path:String,should_loop:bool=true)-> void:
+func pub_crossfade_music(path:String, should_loop: bool = true) -> void:
 	var stream = load(path)
 	# AudioServer.set_bus_mute(1, true)
 	if _music.playing:
@@ -37,7 +37,7 @@ func pub_crossfade_music(path:String,should_loop:bool=true)-> void:
 	_music.play()
 	_loop=should_loop
 
-func pub_play_music(path:String,should_loop:bool=true)-> void:
+func pub_play_music(path:String, should_loop: bool = true) -> void:
 	var stream = load(path)
 	# AudioServer.set_bus_mute(1, true)
 	_music.stop()
@@ -46,7 +46,7 @@ func pub_play_music(path:String,should_loop:bool=true)-> void:
 	_loop=should_loop
 
 
-func pub_play_effect(path:String,channel:int=0)-> void:
+func pub_play_effect(path:String, channel: int = 0) -> void:
 	var stream = load(path)
 	# AudioServer.set_bus_mute(1, true)
 	_effect[channel].stop()
@@ -58,7 +58,7 @@ func pub_stop_music()-> void:
 	_music.stop()
 
 
-func pub_stop_effect(channel:int)-> void:
+func pub_stop_effect(channel: int) -> void:
 	_effect[channel].stop()
 
 
