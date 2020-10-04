@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://Levels/RecordPlayerFront/state_machine.gd"
+"path": "res://StateMachine/state_machine.gd"
 } ]
 _global_script_class_icons={
 "StateMachine": ""
