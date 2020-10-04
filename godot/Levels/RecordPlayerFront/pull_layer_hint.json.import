@@ -1,0 +1,23 @@
+[remap]
+
+importer="lottie_sprite"
+type="PackedScene"
+path="res://.import/pull_layer_hint.json-24e22aae393e37825ed4afe71aca4934.scn"
+
+[deps]
+
+files=[ "res://.import/pull_layer_hint.json-24e22aae393e37825ed4afe71aca4934.scn" ]
+
+source_file="res://Levels/RecordPlayerFront/pull_layer_hint.json"
+dest_files=[ "res://.import/pull_layer_hint.json-24e22aae393e37825ed4afe71aca4934.scn", "res://.import/pull_layer_hint.json-24e22aae393e37825ed4afe71aca4934.scn" ]
+
+[params]
+
+3d=false
+compress/lossy=true
+compress/lossy_quality=0.75
+start_frame=0
+skip_frames=0
+scale=Vector2( 1, 1 )
+animation/import=true
+animation/begin_playing=true

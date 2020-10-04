@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Levels/RecordPlayerFront/record_player_front.gd" type="Script" id=1]
-[ext_resource path="res://Levels/RecordPlayerFront/record_player_front.png" type="Texture" id=2]
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/CombinationLock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/RecordPlayerFront/RecordPlayerNeedle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/RecordPlayerFront/letter.gd" type="Script" id=5]
@@ -14,7 +13,6 @@ script = ExtResource( 1 )
 [node name="Backdrop" type="Sprite" parent="."]
 position = Vector2( 1920, 1080 )
 scale = Vector2( 1.4, 1.4 )
-texture = ExtResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
