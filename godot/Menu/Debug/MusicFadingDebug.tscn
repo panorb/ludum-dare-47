@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Menu/Debug/music_fading_debug.gd" type="Script" id=1]
+[ext_resource path="res://Shared/IBMPlexSans-Light.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/CombinationLock.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 120
+font_data = ExtResource( 2 )
+
+[node name="MusicFadingDebug" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartMusicButton" type="Button" parent="HBoxContainer"]
+margin_right = 1918.0
+margin_bottom = 2160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Start Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 1922.0
+margin_right = 3840.0
+margin_bottom = 2160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CrossfadeButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_right = 1918.0
+margin_bottom = 1078.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Crossfade"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CombinationLock" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 1082.0
+margin_right = 1918.0
+margin_bottom = 2160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+[connection signal="pressed" from="HBoxContainer/StartMusicButton" to="." method="_on_StartMusicButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/CrossfadeButton" to="." method="_on_CrossfadeButton_pressed"]

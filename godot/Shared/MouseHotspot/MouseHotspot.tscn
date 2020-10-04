@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Shared/MouseHotspot/mouse_hotspot.gd" type="Script" id=1]
+
+[node name="MouseHotspot" type="Panel"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HotspotButton" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_clip_content = true
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="HotspotButton" to="." method="_on_HotspotButton_mouse_entered"]
+[connection signal="mouse_exited" from="HotspotButton" to="." method="_on_HotspotButton_mouse_exited"]
+[connection signal="pressed" from="HotspotButton" to="." method="_on_HotspotButton_pressed"]
