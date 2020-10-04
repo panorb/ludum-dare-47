@@ -22,7 +22,7 @@ Wenn das Projekt beispielsweise eine Reihe an Monstern hat (einen Zombie, einen 
 Die Projektstruktur könnte dann also beispielsweise so aussehen:
 
 ```
-.
+godot
 ├───Monster
 │   │   monster.gd
 │   ├───Dragon
