@@ -4,7 +4,8 @@
 [ext_resource path="res://Levels/RecordPlayerFront/record_player_front.png" type="Texture" id=2]
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/CombinationLock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/RecordPlayerFront/RecordPlayerNeedle.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Shared/LetterUI/LetterUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Menu/LetterUI/LetterUI.tscn" type="PackedScene" id=5]
+
 
 [node name="RecordPlayerFront" type="Node2D"]
 position = Vector2( -16.8188, 92.5043 )
