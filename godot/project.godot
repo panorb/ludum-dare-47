@@ -16,11 +16,22 @@ _global_script_class_icons={
 [application]
 
 config/name="LD47 Game"
+run/main_scene="res://Levels/RecordPlayerFront/RecordPlayerFront.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SoundController="*res://Autoloads/sound_controller.gd"
 
 [display]
 
+window/size/width=3840
+window/size/height=2160
+window/size/test_width=1280
+window/size/test_height=720
 window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
 
 [rendering]
 
