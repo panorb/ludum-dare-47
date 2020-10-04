@@ -19,6 +19,10 @@ config/name="LD47 Game"
 run/main_scene="res://Levels/RecordPlayerFront/RecordPlayerFront.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SoundController="*res://Autoloads/sound_controller.gd"
+
 [display]
 
 window/size/width=3840
