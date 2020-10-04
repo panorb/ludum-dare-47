@@ -6,9 +6,6 @@ var _effect: Array = []
 var _music: Array = []
 onready var _tween: Tween = null
 
-# Playback Options
-var _loop: bool = true
-
 # Settings that should be put into an Options script
 const DEFAULT_MUSIC_VOLUME: int = -12
 const DEFAULT_EFFECT_VOLUME: int = -12
@@ -36,14 +33,13 @@ func pub_get_audio_effect_player(channel: int) -> AudioStreamPlayer:
 	return _effect[channel]
 
 func pub_play_music(path:String, channel: int = 0, \
-	volume_db : int = DEFAULT_MUSIC_VOLUME, should_loop: bool = true) -> void:
+	volume_db : int = DEFAULT_MUSIC_VOLUME) -> void:
 	
 	var stream = load(path)
 	_music[channel].volume_db = volume_db
 	_music[channel].stop()
 	_music[channel].stream = stream
 	_music[channel].play()
-	_loop=should_loop
 
 func pub_crossfade_music_channels(channel_from : int, channel_to : int):
 	var from = _music[channel_from]
@@ -59,6 +55,12 @@ func pub_set_music_volume_db(channel: int, volume_db: int):
 
 func pub_set_effect_volume_db(channel: int, volume_db: int):
 	_effect[channel].volume_db = volume_db
+
+func pub_set_music_pitch_scale(channel: int, pitch_scale: float):
+	_music[channel].pitch_scale = pitch_scale
+
+func pub_set_effect_pitch_scale(channel: int, pitch_scale: float):
+	_music[channel].pitch_scale = pitch_scale
 
 func pub_play_effect(path:String, channel: int = 0, \
 	volume_db : int = DEFAULT_EFFECT_VOLUME) -> void:
@@ -90,9 +92,7 @@ func pub_stop_all() -> void:
 
 
 func sig_music_finished(channel: int) -> void:
-	if _loop :
-		_music[channel].stop()
-		_music[channel].play()
+	pass
 
 
 func sig_effect_finished(channel: int) -> void:

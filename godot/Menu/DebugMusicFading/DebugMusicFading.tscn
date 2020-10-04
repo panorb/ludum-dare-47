@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/CombinationLock.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Shared/IBMPlexSans-Light.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Menu/DebugMusicFading/debug_music_fading.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 2 )
+
+[node name="DebugMusicFading" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartMusicButton" type="Button" parent="HBoxContainer"]
+margin_right = 1918.0
+margin_bottom = 2160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "Restart Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 1922.0
+margin_right = 3840.0
+margin_bottom = 2160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CombinationLock" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1918.0
+margin_bottom = 2160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" parent="HBoxContainer/VBoxContainer/CombinationLock" index="0"]
+margin_bottom = -120.0
+
+[node name="ButtonContainer" parent="HBoxContainer/VBoxContainer/CombinationLock/VBoxContainer" index="1"]
+margin_bottom = 710.0
+
+[node name="ButtonSubtract" parent="HBoxContainer/VBoxContainer/CombinationLock/VBoxContainer/ButtonContainer" index="0"]
+margin_bottom = 471.0
+
+[node name="ButtonMode" parent="HBoxContainer/VBoxContainer/CombinationLock/VBoxContainer/ButtonContainer" index="1"]
+margin_bottom = 471.0
+
+[node name="ButtonAdd" parent="HBoxContainer/VBoxContainer/CombinationLock/VBoxContainer/ButtonContainer" index="2"]
+margin_bottom = 471.0
+[connection signal="pressed" from="HBoxContainer/StartMusicButton" to="." method="_on_StartMusicButton_pressed"]
+[connection signal="new_playback_speed" from="HBoxContainer/VBoxContainer/CombinationLock" to="." method="_on_CombinationLock_new_playback_speed"]
+
+[editable path="HBoxContainer/VBoxContainer/CombinationLock"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/RecordPlayerFront/record_player_front.gd" type="Script" id=1]
 [ext_resource path="res://Levels/RecordPlayerFront/base.png" type="Texture" id=2]
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/CombinationLock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/RecordPlayerFront/RecordPlayerNeedle/RecordPlayerNeedle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/RecordPlayerFront/Vinyl/Vinyl.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/RecordPlayerFront/music_mix.gd" type="Script" id=6]
 
 [node name="RecordPlayerFront" type="Control"]
 script = ExtResource( 1 )
@@ -19,7 +20,7 @@ margin_left = -2000.0
 margin_top = -2000.0
 margin_right = 8000.0
 margin_bottom = 4000.0
-color = Color( 0.937255, 0.937255, 0.937255, 1 )
+color = Color( 0.0980392, 0.0941176, 0.0980392, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -45,6 +46,15 @@ margin_bottom = 2000.0
 
 [node name="VBoxContainer" parent="RecordPlayer/CombinationLock" index="0"]
 margin_bottom = -120.0
+
+[node name="MusicMix" type="Node" parent="."]
+script = ExtResource( 6 )
+bgm_unsolved = "res://Shared/static_noise.ogg"
+bgm_solved = "res://Levels/RecordPlayerFront/CombinationLock/combination_lock.ogg"
+distance_fade_start = 80
+
+[node name="Tween" type="Tween" parent="MusicMix"]
 [connection signal="code_correct" from="RecordPlayer/CombinationLock" to="." method="_on_CombinationLock_code_correct"]
+[connection signal="new_playback_speed" from="RecordPlayer/CombinationLock" to="MusicMix" method="_on_CombinationLock_new_playback_speed"]
 
 [editable path="RecordPlayer/CombinationLock"]

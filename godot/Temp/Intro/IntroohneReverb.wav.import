@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/IntroohneReverb.wav-f991ee056b6b090560a78b13c5d008bb.sample"
+
+[deps]
+
+source_file="res://Temp/Intro/IntroohneReverb.wav"
+dest_files=[ "res://.import/IntroohneReverb.wav-f991ee056b6b090560a78b13c5d008bb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

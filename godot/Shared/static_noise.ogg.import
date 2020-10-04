@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/static_noise.ogg-736b6213eba9f5d3051c1e524cc15340.oggstr"
+
+[deps]
+
+source_file="res://Shared/static_noise.ogg"
+dest_files=[ "res://.import/static_noise.ogg-736b6213eba9f5d3051c1e524cc15340.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
