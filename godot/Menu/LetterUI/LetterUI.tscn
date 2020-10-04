@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Levels/RecordPlayerFront/letter.gd" type="Script" id=1]
+
+[node name="LetterUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LetterText" type="Label" parent="."]
+margin_left = -313.0
+margin_top = -313.0
+margin_right = 313.0
+margin_bottom = 313.0
+rect_clip_content = true
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

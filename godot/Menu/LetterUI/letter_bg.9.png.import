@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/letter.jpg-e165b7ca3ec4ac3af3f22eb49dad45d8.stex"
+path="res://.import/letter_bg.9.png-834c1428b4a9f8644d21f9774c147300.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/RecordPlayerFront/Letters/letter.jpg"
-dest_files=[ "res://.import/letter.jpg-e165b7ca3ec4ac3af3f22eb49dad45d8.stex" ]
+source_file="res://Menu/LetterUI/letter_bg.9.png"
+dest_files=[ "res://.import/letter_bg.9.png-834c1428b4a9f8644d21f9774c147300.stex" ]
 
 [params]
 
