@@ -56,6 +56,12 @@ func pub_set_music_volume_db(channel: int, volume_db: int):
 func pub_set_effect_volume_db(channel: int, volume_db: int):
 	_effect[channel].volume_db = volume_db
 
+func pub_set_music_pitch_scale(channel: int, pitch_scale: float):
+	_music[channel].pitch_scale = pitch_scale
+
+func pub_set_effect_pitch_scale(channel: int, pitch_scale: float):
+	_music[channel].pitch_scale = pitch_scale
+
 func pub_play_effect(path:String, channel: int = 0, \
 	volume_db : int = DEFAULT_EFFECT_VOLUME) -> void:
 	
