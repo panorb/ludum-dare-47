@@ -35,7 +35,7 @@ func set_music_mix(new_k : float):
 	SoundController.pub_set_music_volume_db(1, volume_2)
 
 func _on_CombinationLock_new_playback_speed(playback_speed):
-	if combination_lock: # This is really hacky. Why is the signal called before the combiock is ready?
-		refresh_music_mix()
+	yield(get_tree(), "idle_frame")
+	refresh_music_mix()
 	
 	
