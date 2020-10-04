@@ -26,17 +26,6 @@ func _ready() -> void:
 		_effect[i].connect("finished", self, "sig_effect_finished")
 		add_child(_effect[i])
 
-func pub_crossfade_music(path:String, should_loop: bool = true) -> void:
-	var stream = load(path)
-	# AudioServer.set_bus_mute(1, true)
-	if _music.playing:
-		pass	
-	else:
-		_music.stop()
-	_music.stream = stream
-	_music.play()
-	_loop=should_loop
-
 func pub_play_music(path:String, should_loop: bool = true) -> void:
 	var stream = load(path)
 	# AudioServer.set_bus_mute(1, true)
