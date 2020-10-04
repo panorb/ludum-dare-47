@@ -11,5 +11,5 @@ dest_files=[ "res://.import/hotspot_hover.ogg-26a778aa4eeb6a0578478e6f7b4baf22.o
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

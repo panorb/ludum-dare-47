@@ -11,5 +11,5 @@ dest_files=[ "res://.import/unhover.ogg-82d0a05914642f43d35fda5ad46dc039.oggstr"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

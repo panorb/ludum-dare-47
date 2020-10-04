@@ -11,42 +11,58 @@ __meta__ = {
 [node name="Menu" type="HBoxContainer" parent="."]
 margin_right = 243.0
 margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
 margin_right = 137.0
 margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="StartButton" type="Button" parent="Menu/VBoxContainer"]
 margin_right = 137.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Start New Game"
 
 [node name="LoadGameButton" type="Button" parent="Menu/VBoxContainer"]
 margin_top = 24.0
-margin_right = 137.0
+margin_right = 764.0
 margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Load Existing Game"
 
 [node name="CenterContainer" type="VBoxContainer" parent="Menu"]
 margin_left = 141.0
 margin_right = 204.0
 margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="CreditsButton" type="Button" parent="Menu/CenterContainer"]
 margin_right = 63.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Credits"
 
 [node name="SettingsButton" type="Button" parent="Menu/CenterContainer"]
 margin_top = 24.0
-margin_right = 63.0
+margin_right = 764.0
 margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Settings"
 
 [node name="ExitButton" type="Button" parent="Menu"]
 margin_left = 208.0
 margin_right = 243.0
 margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Exit"
 [connection signal="pressed" from="Menu/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/LoadGameButton" to="." method="_on_LoadGameButton_pressed"]
