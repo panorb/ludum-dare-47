@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lockButton3.ogg-ad2c66cb839d87d2b10b37a85658dd4e.oggstr"
+
+[deps]
+
+source_file="res://Levels/RecordPlayerFront/Sounds/lockButton3.ogg"
+dest_files=[ "res://.import/lockButton3.ogg-ad2c66cb839d87d2b10b37a85658dd4e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
