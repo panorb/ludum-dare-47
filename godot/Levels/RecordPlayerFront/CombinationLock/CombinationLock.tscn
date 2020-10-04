@@ -1,23 +1,17 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/combination_lock.gd" type="Script" id=1]
 [ext_resource path="res://Shared/IBMPlexSans-Light.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/combination_lock.png" type="Texture" id=3]
+[ext_resource path="res://Levels/RecordPlayerFront/Buttons/slow_off.png" type="Texture" id=4]
+[ext_resource path="res://Levels/RecordPlayerFront/Buttons/fast_off.png" type="Texture" id=5]
+[ext_resource path="res://Levels/RecordPlayerFront/Buttons/speed_off.png" type="Texture" id=6]
+[ext_resource path="res://Levels/RecordPlayerFront/Buttons/slow_on.png" type="Texture" id=7]
+[ext_resource path="res://Levels/RecordPlayerFront/Buttons/fast_on.png" type="Texture" id=8]
+[ext_resource path="res://Levels/RecordPlayerFront/Buttons/speed_on.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 180
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 128
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 128
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 128
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
@@ -100,37 +94,31 @@ margin_bottom = 550.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ButtonSubtract" type="Button" parent="VBoxContainer/ButtonContainer"]
-modulate = Color( 1, 1, 1, 0 )
+[node name="ButtonSubtract" type="TextureButton" parent="VBoxContainer/ButtonContainer"]
 margin_right = 264.0
 margin_bottom = 311.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
-text = "-"
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 7 )
 
-[node name="ButtonMode" type="Button" parent="VBoxContainer/ButtonContainer"]
-modulate = Color( 1, 1, 1, 0 )
+[node name="ButtonMode" type="TextureButton" parent="VBoxContainer/ButtonContainer"]
 margin_left = 268.0
 margin_right = 532.0
 margin_bottom = 311.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
-text = "M"
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 9 )
 
-[node name="ButtonAdd" type="Button" parent="VBoxContainer/ButtonContainer"]
-modulate = Color( 1, 1, 1, 0 )
+[node name="ButtonAdd" type="TextureButton" parent="VBoxContainer/ButtonContainer"]
 margin_left = 536.0
 margin_right = 800.0
 margin_bottom = 311.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = SubResource( 4 )
-text = "+"
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 8 )
 
 [node name="ActiveDigit" type="Label" parent="."]
 margin_left = 120.0

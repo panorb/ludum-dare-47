@@ -4,6 +4,9 @@ extends TextureRect
 onready var digit := $VBoxContainer/Digit
 onready var anim := $DigitAnimation
 
+# Buttons
+onready var buttons := $VBoxContainer/ButtonContainer.get_children()
+
 export(int,1,5) var digit_number := 3
 var number := 128 setget set_number # Currently displayed number
 var mode := 0 # Which digit are we editing? 10^mode
@@ -17,6 +20,9 @@ func set_number(value):
 	number = value
 
 func _ready():
+	for button in buttons:
+		button.connect("pressed", self, "_on_button_pressed")
+	
 	emit_signal("new_playback_speed",number)
 	refresh_number_digits()
 
@@ -38,6 +44,10 @@ func code_combination_test():
 	if number == correct_answer:
 		emit_signal("code_correct")
 
+func _on_button_pressed():
+	print("Blip")
+	SoundController.pub_play_effect("res://Shared/press.wav", 2)
+
 func _on_ButtonAdd_pressed():
 	number += pow(10, mode)
 	refresh_number_digits()
@@ -55,4 +65,4 @@ func _on_ButtonMode_pressed():
 		var old_mode = mode
 		mode = (mode + 1) % 3
 		anim.play("d"+str(3-old_mode)+"tod"+str(3-mode))
-	
+
