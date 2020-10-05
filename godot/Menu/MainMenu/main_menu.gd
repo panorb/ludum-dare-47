@@ -24,7 +24,6 @@ func _on_VideoPlayer_finished():
 	_tween.interpolate_property(button_container, ":modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 2, Tween.TRANS_SINE)
 	_tween.start()
 
-
 func _on_Tween_tween_completed(object, key):
 	if (object == button_container and key == ":modulate"):
 		play_button.disabled = false
