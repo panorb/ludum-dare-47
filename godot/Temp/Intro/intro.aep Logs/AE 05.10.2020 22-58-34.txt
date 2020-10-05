@@ -1,0 +1,8 @@
+  05.10.2020 22:58:34: Starting composition “main”.
+
+  Output To: H:\Dateien\Documents\GitHub\ludum-dare-47\godot\Menu\MainMenu\transition_frame.png    05.10.2020 22:58:34: Finished composition “main”.
+
+
+  Total Time Elapsed: 0 Seconds
+Log closed on 05.10.2020 at 22:58:34
+
