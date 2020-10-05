@@ -10,7 +10,7 @@
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/end_&_off.png" type="Texture" id=8]
 [ext_resource path="res://Levels/RecordPlayerPuzzle/record_player_puzzle_one.gd" type="Script" id=9]
 
-[node name="RecordPlayerPuzzleOne" type="Node2D"]
+[node name="RecordPlayerPuzzleOne" type="CanvasLayer"]
 script = ExtResource( 9 )
 
 [node name="PuzzleOneBase" type="Sprite" parent="."]
@@ -100,7 +100,7 @@ position = Vector2( 125, 525 )
 [connection signal="got_pressed" from="Buttons/ButtonTwo" to="Mid/MidXor" method="_on_Button2_got_pressed"]
 [connection signal="got_pressed" from="Buttons/ButtonThree" to="Mid/MidAnd" method="_on_Button3_got_pressed"]
 [connection signal="got_pressed" from="Buttons/ButtonFour" to="Mid/MidAnd" method="_on_Button4_got_pressed"]
-[connection signal="got_changed" from="Mid/MidAnd" to="." method="_on_MidAnd_got_changed"]
 [connection signal="got_changed" from="Mid/MidAnd" to="EndAnd" method="_on_MidAnd_got_changed"]
-[connection signal="got_changed" from="Mid/MidXor" to="." method="_on_MidXor_got_changed"]
+[connection signal="got_changed" from="Mid/MidAnd" to="." method="_on_MidAnd_got_changed"]
 [connection signal="got_changed" from="Mid/MidXor" to="EndAnd" method="_on_MidXor_got_changed"]
+[connection signal="got_changed" from="Mid/MidXor" to="." method="_on_MidXor_got_changed"]
