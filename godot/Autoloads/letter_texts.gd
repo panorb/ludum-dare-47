@@ -52,7 +52,7 @@ Konstantin"""
 
 const FINAL_LETTER = """Dear Lea,
 
-Thank you for lifting this Curse off our family. I was by the House
+Thank you for lifting this curse off our family. I was by the house
 today and I was overwhelmed by the silence and peace. For the first
 time in 25 years I could sit in the living room where I grow up without
 this sound of terror.
