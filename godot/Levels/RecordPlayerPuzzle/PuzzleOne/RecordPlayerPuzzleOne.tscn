@@ -90,9 +90,13 @@ position = Vector2( 125, 325 )
 [node name="DecoWheel3" parent="DecoWheels" instance=ExtResource( 2 )]
 position = Vector2( 125, 525 )
 [connection signal="got_changed" from="EndAnd" to="." method="_on_EndPrefep_got_changed"]
+[connection signal="forced_press" from="Buttons/ButtonOne" to="Mid/MidOne" method="_on_ButtonOne_forced_press"]
 [connection signal="got_pressed" from="Buttons/ButtonOne" to="Mid/MidOne" method="_on_Button1_got_pressed"]
+[connection signal="forced_press" from="Buttons/ButtonTwo" to="Mid/MidOne" method="_on_ButtonTwo_forced_press"]
 [connection signal="got_pressed" from="Buttons/ButtonTwo" to="Mid/MidOne" method="_on_Button2_got_pressed"]
+[connection signal="forced_press" from="Buttons/ButtonThree" to="Mid/MidTwo" method="_on_ButtonThree_forced_press"]
 [connection signal="got_pressed" from="Buttons/ButtonThree" to="Mid/MidTwo" method="_on_Button3_got_pressed"]
+[connection signal="forced_press" from="Buttons/ButtonFour" to="Mid/MidTwo" method="_on_ButtonFour_forced_press"]
 [connection signal="got_pressed" from="Buttons/ButtonFour" to="Mid/MidTwo" method="_on_Button4_got_pressed"]
 [connection signal="got_changed" from="Mid/MidOne" to="EndAnd" method="_on_MidXor_got_changed"]
 [connection signal="got_changed" from="Mid/MidOne" to="." method="_on_MidXor_got_changed"]
