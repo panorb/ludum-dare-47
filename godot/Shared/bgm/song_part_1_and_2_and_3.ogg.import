@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/song_part_1_and_2_and_3.ogg-85e1a2c8fedf97436ebd3e922c373870.oggstr"
+
+[deps]
+
+source_file="res://Shared/bgm/song_part_1_and_2_and_3.ogg"
+dest_files=[ "res://.import/song_part_1_and_2_and_3.ogg-85e1a2c8fedf97436ebd3e922c373870.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

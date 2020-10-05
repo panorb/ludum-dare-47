@@ -35,7 +35,7 @@ __meta__ = {
 [node name="MusicMix" type="Node" parent="."]
 script = ExtResource( 7 )
 bgm_unsolved = "res://Shared/static_noise.ogg"
-bgm_solved = "res://Levels/RecordPlayerFront/Song.ogg"
+bgm_solved = "res://Shared/bgm/song_part_1.ogg"
 
 [node name="Tween" type="Tween" parent="MusicMix"]
 

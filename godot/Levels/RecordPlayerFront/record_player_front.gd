@@ -16,7 +16,7 @@ func _ready():
 	combination_lock.connect("new_playback_speed",record_player_needle,"update_playback_speed")
 
 func _on_CombinationLock_code_correct():
-	SoundController.pub_play_effect("res://Levels/RecordPlayerFront/CombinationLock/slate_clack.ogg",5)
+	SoundController.pub_play_effect("res://Levels/RecordPlayerFront/CombinationLock/combi_lock_correct.wav", 5, linear2db(8 * A.vol_mul))
 	_tween.interpolate_property(control_puzzle0, "margin_left", null, -10, 0.5, Tween.TRANS_EXPO)
 	_tween.start()
 	mouse_hotspot.show()
@@ -24,7 +24,7 @@ func _on_CombinationLock_code_correct():
 	player_hint.get_node("HintFadeIn").play("FadeIn")
 	
 func _on_MouseHotspot_is_pressed():
-	SoundController.pub_play_effect("res://Levels/RecordPlayerFront/panel_woosh.wav", 3, 10)
+	SoundController.pub_play_effect("res://Levels/RecordPlayerFront/panel_woosh.wav", 4, linear2db(10 * A.vol_mul))
 	_tween.interpolate_property(control_puzzle0, "margin_left", null, -1800, 1.5, Tween.TRANS_EXPO)
 	_tween.interpolate_property(control_puzzle0, "margin_right", null, -1500, 1.5, Tween.TRANS_EXPO)
 	_tween.start()
