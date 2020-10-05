@@ -6,6 +6,8 @@ signal got_changed(is_active)
 var is_active := false setget set_is_active
 var port_one_active := false
 var port_two_active := false
+export(bool) var port_one_negated := false
+export(bool) var port_two_negated := false
 export(String, FILE) var off_texture
 export(String, FILE) var on_texture
 
