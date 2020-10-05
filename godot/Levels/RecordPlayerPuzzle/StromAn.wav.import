@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/StromAn.wav-25084a994d8ce9b2fde23949242b8c5a.sample"
+
+[deps]
+
+source_file="res://Levels/RecordPlayerPuzzle/StromAn.wav"
+dest_files=[ "res://.import/StromAn.wav-25084a994d8ce9b2fde23949242b8c5a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

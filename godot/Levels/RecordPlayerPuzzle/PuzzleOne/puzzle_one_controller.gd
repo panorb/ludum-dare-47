@@ -7,7 +7,7 @@ onready var mouse_hotspot = $MouseHotspot
 
 export(Array, String, FILE) var loadable_textures : Array = []
 
-func _init():
+func _ready():
 	mouse_hotspot.hide()
 
 

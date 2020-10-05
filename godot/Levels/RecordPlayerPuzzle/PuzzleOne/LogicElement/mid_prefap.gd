@@ -40,10 +40,10 @@ func _on_Button2_got_pressed(value):
 
 
 func _on_Button3_got_pressed(value):
-	port_one_active = value
+	port_one_active = not value
 	test_if_active()
 
 
 func _on_Button4_got_pressed(value):
-	port_two_active = not value
+	port_two_active = value
 	test_if_active()
