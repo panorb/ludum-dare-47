@@ -10,6 +10,7 @@ onready var _tween = $Tween
 onready var play_button = $CanvasLayer/HBoxContainer/VBoxContainer/PlayButton
 onready var volume_button = $CanvasLayer/HBoxContainer/VBoxContainer/VolumeButton
 onready var exit_button = $CanvasLayer/HBoxContainer/VBoxContainer/ExitButton
+onready var transition_frame = $CanvasLayer/TransitionFrame
 
 func _ready():
 	SoundController.connect("song_finished", self, "_on_song_finished")
@@ -46,5 +47,8 @@ func _on_button_mouse_entered():
 
 
 func _on_PlayButton_pressed():
+	transition_frame.visible = true
 	video_player.stream = load("res://Menu/MainMenu/button_press.ogv")
 	video_player.play()
+	yield(get_tree().create_timer(0.1), "timeout")
+	transition_frame.visible = false

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/number_change.wav-c4c25b834dc1e5016853398a075c9e50.sample"
+
+[deps]
+
+source_file="res://Levels/RecordPlayerFront/CombinationLock/number_change.wav"
+dest_files=[ "res://.import/number_change.wav-c4c25b834dc1e5016853398a075c9e50.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
