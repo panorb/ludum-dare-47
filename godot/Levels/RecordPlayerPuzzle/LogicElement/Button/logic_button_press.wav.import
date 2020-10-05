@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/logic_button_press.wav-314640f32e7597458dda4dc43b619fdc.sample"
+
+[deps]
+
+source_file="res://Levels/RecordPlayerPuzzle/LogicElement/Button/logic_button_press.wav"
+dest_files=[ "res://.import/logic_button_press.wav-314640f32e7597458dda4dc43b619fdc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

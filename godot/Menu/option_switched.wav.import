@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/salvation.wav-b8c6ac2da5807f93a6e0dbdf6747a535.sample"
+path="res://.import/option_switched.wav-5dd7bdaff22960fd8be125324e3de8f4.sample"
 
 [deps]
 
-source_file="res://Levels/Outro/salvation.wav"
-dest_files=[ "res://.import/salvation.wav-b8c6ac2da5807f93a6e0dbdf6747a535.sample" ]
+source_file="res://Menu/option_switched.wav"
+dest_files=[ "res://.import/option_switched.wav-5dd7bdaff22960fd8be125324e3de8f4.sample" ]
 
 [params]
 

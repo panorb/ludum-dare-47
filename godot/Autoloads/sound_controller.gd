@@ -36,6 +36,8 @@ func pub_play_music(path:String, channel: int = 0, \
 	volume_db : int = DEFAULT_MUSIC_VOLUME) -> void:
 	
 	var stream = load(path)
+	if (stream == null):
+		print("Could not load ", path)
 	_music[channel].volume_db = volume_db
 	_music[channel].stop()
 	_music[channel].stream = stream
@@ -66,6 +68,8 @@ func pub_play_effect(path:String, channel: int = 0, \
 	volume_db : int = DEFAULT_EFFECT_VOLUME) -> void:
 	
 	var stream = load(path)
+	if (stream == null):
+		print("Could not load ", path)
 	_effect[channel].volume_db = volume_db
 	_effect[channel].stop()
 	_effect[channel].stream = stream

@@ -113,7 +113,7 @@ visible = false
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 707, 225 )
 scale = Vector2( 0.5, 0.5 )
-frame = 40
+frame = 12
 
 [node name="HintFadeIn" type="AnimationPlayer" parent="Interactables/Control/PlayerHint"]
 anims/FadeIn = SubResource( 1 )

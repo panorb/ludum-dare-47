@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/combi_lock_button_2.wav-b8b581a6af6bcccb5cf29dc23ad3c31a.sample"
+
+[deps]
+
+source_file="res://Levels/RecordPlayerFront/CombinationLock/combi_lock_button_2.wav"
+dest_files=[ "res://.import/combi_lock_button_2.wav-b8b581a6af6bcccb5cf29dc23ad3c31a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
