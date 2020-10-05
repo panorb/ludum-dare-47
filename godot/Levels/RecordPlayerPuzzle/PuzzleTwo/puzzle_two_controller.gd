@@ -1,15 +1,16 @@
-extends CanvasLayer
+extends Node2D
 
 onready var buttons = $RecordPlayerPuzzleTwo/Buttons.get_children()
 onready var mouse_hotspot = $MouseHotspot
+signal done
 
 func _ready():
 	mouse_hotspot.hide()
 
 
 func _on_MouseHotspot_is_pressed():
-	print("next_level")
 	mouse_hotspot.hide()
+	emit_signal("done")
 
 
 func _on_RecordPlayerPuzzleTwo_is_active():

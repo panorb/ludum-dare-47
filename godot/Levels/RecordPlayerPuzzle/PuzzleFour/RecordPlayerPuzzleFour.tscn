@@ -6,7 +6,7 @@
 [ext_resource path="res://Levels/RecordPlayerPuzzle/LogicElement/MiddleElement/MidPrefap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleFour/record_player_puzzle_four.gd" type="Script" id=5]
 
-[node name="RecordPlayerPuzzleFour" type="CanvasLayer"]
+[node name="RecordPlayerPuzzleFour" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="PuzzleFourBase" type="Sprite" parent="."]

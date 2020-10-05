@@ -7,7 +7,7 @@
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleTwo/base.png" type="Texture" id=5]
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/record_player_puzzle_one.gd" type="Script" id=6]
 
-[node name="RecordPlayerPuzzleThree" type="CanvasLayer"]
+[node name="RecordPlayerPuzzleThree" type="Node2D"]
 script = ExtResource( 6 )
 
 [node name="PuzzleThreeBase" type="Sprite" parent="."]

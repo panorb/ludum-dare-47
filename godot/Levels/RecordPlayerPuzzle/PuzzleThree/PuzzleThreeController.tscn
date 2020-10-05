@@ -5,7 +5,7 @@
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleThree/puzzle_three_controller.gd" type="Script" id=3]
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleThree/base.png" type="Texture" id=4]
 
-[node name="PuzzleThreeController" type="CanvasLayer"]
+[node name="PuzzleThreeController" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="RecordPlayerPuzzleThree" parent="." instance=ExtResource( 1 )]
@@ -15,10 +15,9 @@ texture = ExtResource( 4 )
 
 [node name="MouseHotspot" parent="." instance=ExtResource( 2 )]
 margin_top = 650.0
-margin_right = -2805.0
-margin_bottom = -160.0
+margin_right = 1030.0
+margin_bottom = 2000.0
 [connection signal="is_active" from="RecordPlayerPuzzleThree" to="." method="_on_RecordPlayerPuzzleTwo_is_active"]
-[connection signal="got_pressed" from="RecordPlayerPuzzleThree/Buttons/ButtonOne" to="." method="_on_ButtonOne_got_pressed"]
 [connection signal="pressed" from="RecordPlayerPuzzleThree/Buttons/ButtonOne" to="." method="_on_ButtonOne_pressed"]
 [connection signal="pressed" from="RecordPlayerPuzzleThree/Buttons/ButtonTwo" to="." method="_on_ButtonTwo_pressed"]
 [connection signal="pressed" from="RecordPlayerPuzzleThree/Buttons/ButtonThree" to="." method="_on_ButtonThree_pressed"]

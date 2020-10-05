@@ -10,7 +10,7 @@ onready var _tween = $Tween
 onready var play_button = $CanvasLayer/HBoxContainer/VBoxContainer/PlayButton
 onready var volume_button = $CanvasLayer/HBoxContainer/VBoxContainer/VolumeButton
 onready var exit_button = $CanvasLayer/HBoxContainer/VBoxContainer/ExitButton
-onready var transition_frame = $CanvasLayer/TransitionFrame
+var over := false
 
 func _ready():
 	SoundController.connect("song_finished", self, "_on_song_finished")
@@ -26,8 +26,11 @@ func _on_LetterUI_letter_unfocused():
 
 func _on_VideoPlayer_finished():
 	print("_on_VideoPlayer_finished")
-	_tween.interpolate_property(button_container, ":modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 2, Tween.TRANS_SINE)
-	_tween.start()
+	if over:
+		SceneChanger.change_scene("res://Levels/RecordPlayerFront/RecordPlayerFront.tscn")
+	else:
+		_tween.interpolate_property(button_container, ":modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 2, Tween.TRANS_SINE)
+		_tween.start()
 
 func _on_Tween_tween_completed(object, key):
 	if (object == button_container and key == ":modulate"):
@@ -47,8 +50,12 @@ func _on_button_mouse_entered():
 
 
 func _on_PlayButton_pressed():
-	transition_frame.visible = true
+	over = true
 	video_player.stream = load("res://Menu/MainMenu/button_press.ogv")
 	video_player.play()
-	yield(get_tree().create_timer(0.1), "timeout")
-	transition_frame.visible = false
+	_tween.interpolate_property(button_container, ":modulate", Color(1, 1, 1, 1), Color(1, 1, 1, 0), 2, Tween.TRANS_SINE)
+	_tween.start()
+
+
+func _on_ExitButton_pressed():
+	get_tree().quit()

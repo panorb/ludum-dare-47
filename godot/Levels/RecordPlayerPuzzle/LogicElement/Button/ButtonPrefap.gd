@@ -17,7 +17,7 @@ func force_update():
 
 func _on_ButtonPrefap_pressed():
 	play_animation()
-	SoundController.pub_play_effect("res://Levels/RecordPlayerPuzzle/LogicElement/Button/LogicButtonPress.wav",3)
+	SoundController.pub_play_effect("res://Levels/RecordPlayerPuzzle/LogicElement/Button/logic_button_press.wav",3, linear2db(8 * A.vol_mul))
 	emit_signal("got_pressed",pressed)
 
 func _on_AnimatedSprite_animation_finished():

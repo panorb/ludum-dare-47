@@ -7,22 +7,25 @@
 [ext_resource path="res://Levels/RecordPlayerPuzzle/LogicElement/MiddleElement/MidPrefap.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/record_player_puzzle_one.gd" type="Script" id=9]
 
-[node name="RecordPlayerPuzzleOne" type="CanvasLayer"]
+[node name="RecordPlayerPuzzleOne" type="Node2D"]
 script = ExtResource( 9 )
 
 [node name="PuzzleOneBase" type="Sprite" parent="."]
+position = Vector2( 200, 83 )
 texture = ExtResource( 1 )
 offset = Vector2( 520.021, 1000.01 )
 
 [node name="EndAnd" parent="." instance=ExtResource( 4 )]
-margin_left = 60.0
-margin_top = 640.0
-margin_right = 982.0
-margin_bottom = 962.0
+margin_left = 260.0
+margin_top = 723.0
+margin_right = 1182.0
+margin_bottom = 1045.0
 
 [node name="Buttons" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 200.0
+margin_top = 83.0
+margin_right = 240.0
+margin_bottom = 123.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -52,8 +55,10 @@ margin_right = 997.622
 margin_bottom = 1920.0
 
 [node name="Mid" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 200.0
+margin_top = 83.0
+margin_right = 240.0
+margin_bottom = 123.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -74,7 +79,7 @@ type = "AND"
 port_one_negated = true
 
 [node name="DecoWheels" type="Node2D" parent="."]
-position = Vector2( 10, 0 )
+position = Vector2( 210, 83 )
 
 [node name="DecoWheel1" parent="DecoWheels" instance=ExtResource( 2 )]
 position = Vector2( 125, 125 )
@@ -89,7 +94,7 @@ position = Vector2( 125, 525 )
 [connection signal="got_pressed" from="Buttons/ButtonTwo" to="Mid/MidOne" method="_on_Button2_got_pressed"]
 [connection signal="got_pressed" from="Buttons/ButtonThree" to="Mid/MidTwo" method="_on_Button3_got_pressed"]
 [connection signal="got_pressed" from="Buttons/ButtonFour" to="Mid/MidTwo" method="_on_Button4_got_pressed"]
-[connection signal="got_changed" from="Mid/MidOne" to="." method="_on_MidXor_got_changed"]
 [connection signal="got_changed" from="Mid/MidOne" to="EndAnd" method="_on_MidXor_got_changed"]
-[connection signal="got_changed" from="Mid/MidTwo" to="." method="_on_MidAnd_got_changed"]
+[connection signal="got_changed" from="Mid/MidOne" to="." method="_on_MidXor_got_changed"]
 [connection signal="got_changed" from="Mid/MidTwo" to="EndAnd" method="_on_MidAnd_got_changed"]
+[connection signal="got_changed" from="Mid/MidTwo" to="." method="_on_MidAnd_got_changed"]

@@ -1,9 +1,8 @@
-extends CanvasLayer
+extends Node2D
 
 
 onready var mouse_hotspot = $MouseHotspot
-
-export(Array, String, FILE) var loadable_textures : Array = []
+signal done
 
 func _ready():
 	mouse_hotspot.hide()
@@ -15,5 +14,6 @@ func _on_RecordPlayerPuzzleOne_is_active():
 
 
 func _on_MouseHotspot_is_pressed():
-	print("next_level")
 	mouse_hotspot.hide()
+	emit_signal("done")	
+	

@@ -8,7 +8,7 @@ onready var anim := $DigitAnimation
 onready var buttons := $VBoxContainer/ButtonContainer.get_children()
 
 export(int,1,5) var digit_number := 3
-var number := 665 setget set_number # Currently displayed number
+var number := 128 setget set_number # Currently displayed number
 var mode := 0 # Which digit are we editing? 10^mode
 var correct_answer := 666
 

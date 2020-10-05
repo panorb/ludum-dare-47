@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Levels/RecordPlayerFront/record_player_front.gd" type="Script" id=1]
 [ext_resource path="res://Levels/RecordPlayerFront/base.png" type="Texture" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://Shared/MouseHotspot/MouseHotspot.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Levels/RecordPlayerFront/music_mix.gd" type="Script" id=7]
 [ext_resource path="res://Levels/RecordPlayerFront/pull_layer_hint.json" type="PackedScene" id=8]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/PuzzleOneController.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleTwo/PuzzleTwoController.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleThree/PuzzleThreeController.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleFour/PuzzleFourController.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeIn"
@@ -77,17 +81,21 @@ margin_bottom = 1920.86
 
 [node name="Interactables" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="Interactables"]
-margin_left = 200.0
-margin_top = 83.0
-margin_right = 1240.0
-margin_bottom = 2083.0
-mouse_filter = 1
-mouse_default_cursor_shape = 2
-color = Color( 0.0980392, 0.0941176, 0.0980392, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Puzzels" type="Node2D" parent="Interactables"]
+
+[node name="PuzzleOneController" parent="Interactables/Puzzels" instance=ExtResource( 9 )]
+visible = false
+
+[node name="PuzzleTwoController" parent="Interactables/Puzzels" instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 200, 83 )
+
+[node name="PuzzleThreeController" parent="Interactables/Puzzels" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 200, 83 )
+
+[node name="PuzzleFourController" parent="Interactables/Puzzels" instance=ExtResource( 12 )]
+visible = false
 
 [node name="Control" type="Control" parent="Interactables"]
 __meta__ = {
@@ -113,11 +121,15 @@ visible = false
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 707, 225 )
 scale = Vector2( 0.5, 0.5 )
-frame = 2
+frame = 31
 
 [node name="HintFadeIn" type="AnimationPlayer" parent="Interactables/Control/PlayerHint"]
 anims/FadeIn = SubResource( 1 )
 [connection signal="is_pressed" from="RecordPlayer/MouseHotspot" to="." method="_on_MouseHotspot_is_pressed"]
+[connection signal="done" from="Interactables/Puzzels/PuzzleOneController" to="." method="_on_PuzzleOneController_done"]
+[connection signal="done" from="Interactables/Puzzels/PuzzleTwoController" to="." method="_on_PuzzleTwoController_done"]
+[connection signal="done" from="Interactables/Puzzels/PuzzleThreeController" to="." method="_on_PuzzleThreeController_done"]
+[connection signal="done" from="Interactables/Puzzels/PuzzleFourController" to="." method="_on_PuzzleFourController_done"]
 [connection signal="code_correct" from="Interactables/Control/CombinationLock" to="." method="_on_CombinationLock_code_correct"]
 [connection signal="new_playback_speed" from="Interactables/Control/CombinationLock" to="MusicMix" method="_on_CombinationLock_new_playback_speed"]
 [connection signal="is_pressed" from="Interactables/Control/MouseHotspot" to="." method="_on_MouseHotspot_is_pressed"]
