@@ -1,6 +1,7 @@
 extends Node
 
-
+func _init():
+	VisualServer.texture_set_shrink_all_x2_on_set_data(true)
 const INTRO_LETTER = """Dear Lea,
 
 I was shocked and saddened to learn about the death of your
