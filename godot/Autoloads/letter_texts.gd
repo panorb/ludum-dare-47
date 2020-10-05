@@ -23,7 +23,7 @@ I wish you peace, and I’m here to support you during this difficult time.
 With love,
 Steven"""
 
-const SOLUTION_LETTER = """Dear Rachel,
+const SOLUTION_LETTER1 = """Dear Rachel,
 
 I researched the record player model and it was made
 in 1966 by Lucian Morgenstern, a renowned manufacturer
@@ -35,4 +35,31 @@ random info can help you to stop that thing from playing.
 Kind regards 
 Paul Norderbeck"""
 
-const LETTERS = [INTRO_LETTER, SOLUTION_LETTER]
+const SOLUTION_LETTER2 = """Dear Rachel,
+
+first of all: I don't think you should try to solve the mystery 
+of this cursed record player, too many members of your family got
+lost in it, but if you really want to try it here are some things
+from a letter your grand father max send me.
+
+The circuits are some sort of logic puzzle, the buttons at the 
+bottom will send an electric current to the logic gates above them
+if pressed. The gates will send a current to the next gate if they
+receive the correct input.
+
+Cheers 
+Konstantin"""
+
+const FINAL_LETTER = """Dear Lea,
+
+Thank you for lifting this curse off our family. I was by the house
+today and I was overwhelmed by the silence and peace. For the first
+time in 25 years I could sit in the living room where I grow up without
+this sound of terror.
+
+With love
+Jan"""
+
+
+
+const LETTERS = [INTRO_LETTER, SOLUTION_LETTER, SOLUTION_LETTER2, FINAL_LETTER]
