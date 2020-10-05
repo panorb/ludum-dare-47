@@ -114,3 +114,19 @@ func _on_AND_animation_finished():
 		and_animation.set_frame(0)
 	else:
 		and_animation.set_frame(30)
+
+
+func _on_ButtonFour_forced_press(value):
+	 _on_Button4_got_pressed(value)
+
+
+func _on_ButtonThree_forced_press(value):
+	_on_Button3_got_pressed(value)
+
+
+func _on_ButtonTwo_forced_press(value):
+	_on_Button2_got_pressed(value)
+
+
+func _on_ButtonOne_forced_press(value):
+	_on_Button1_got_pressed(value)

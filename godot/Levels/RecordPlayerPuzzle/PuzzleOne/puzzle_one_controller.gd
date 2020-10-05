@@ -1,8 +1,6 @@
-extends Node2D
+extends CanvasLayer
 
-onready var end = $RecordPlayerPuzzleOne/EndAnd
-onready var mid_one = $RecordPlayerPuzzleOne/Mid/MidXor
-onready var mid_two = $RecordPlayerPuzzleOne/Mid/MidAnd
+
 onready var mouse_hotspot = $MouseHotspot
 
 export(Array, String, FILE) var loadable_textures : Array = []
