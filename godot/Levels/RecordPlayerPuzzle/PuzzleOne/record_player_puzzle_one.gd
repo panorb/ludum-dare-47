@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 
 onready var deco_wheel1 = $DecoWheels/DecoWheel1

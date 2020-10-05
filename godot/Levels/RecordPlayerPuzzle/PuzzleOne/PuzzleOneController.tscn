@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Levels/RecordPlayerPuzzle/RecordPlayerPuzzleOne.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/RecordPlayerPuzzleOne.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/puzzle_one_controller.gd" type="Script" id=2]
 [ext_resource path="res://Shared/MouseHotspot/MouseHotspot.tscn" type="PackedScene" id=3]
 
