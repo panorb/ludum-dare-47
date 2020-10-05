@@ -6,7 +6,7 @@ onready var animated_sprite = $AnimatedSprite
 
 func _ready():
 	yield(get_tree(), "idle_frame")
-	emit_signal("got_pressed",pressed)
+	emit_signal("forced_press",pressed)
 
 func play_animation():
 	animated_sprite.play("default",pressed)

@@ -54,3 +54,10 @@ func _on_AnimatedSprite_animation_finished():
 		animated_sprite.set_frame(0)
 	else:
 		animated_sprite.set_frame(30)
+
+
+func _on_MidThridRowOne_got_changed(is_active):
+	_on_MidXor_got_changed(is_active)
+
+func _on_MidThridRowTwo_got_changed(is_active):
+	_on_MidAnd_got_changed(is_active)
