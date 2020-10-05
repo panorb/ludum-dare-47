@@ -5,7 +5,7 @@
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/CombinationLock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/RecordPlayerFront/RecordPlayerNeedle/RecordPlayerNeedle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/RecordPlayerFront/Vinyl/Vinyl.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Levels/RecordPlayerFront/music_mix.gd" type="Script" id=6]
+[ext_resource path="res://Shared/MouseHotspot/MouseHotspot.tscn" type="PackedScene" id=6]
 
 [node name="RecordPlayerFront" type="Control"]
 script = ExtResource( 1 )
@@ -38,7 +38,8 @@ texture = ExtResource( 2 )
 position = Vector2( 2059.76, 991.161 )
 
 [node name="RecordPlayerNeedle" parent="RecordPlayer" instance=ExtResource( 4 )]
-position = Vector2( 3077.86, 273.307 )
+position = Vector2( 3077.86, 273.306 )
+rotation = -1.13446
 
 [node name="CombinationLock" parent="RecordPlayer" instance=ExtResource( 3 )]
 margin_right = 1040.0
@@ -47,14 +48,12 @@ margin_bottom = 2000.0
 [node name="VBoxContainer" parent="RecordPlayer/CombinationLock" index="0"]
 margin_bottom = -120.0
 
-[node name="MusicMix" type="Node" parent="."]
-script = ExtResource( 6 )
-bgm_unsolved = "res://Shared/static_noise.ogg"
-bgm_solved = "res://Levels/RecordPlayerFront/CombinationLock/combination_lock.ogg"
-distance_fade_start = 80
-
-[node name="Tween" type="Tween" parent="MusicMix"]
+[node name="MouseHotspot" parent="RecordPlayer" instance=ExtResource( 6 )]
+margin_left = 95.888
+margin_top = 1170.86
+margin_right = 945.888
+margin_bottom = 1920.86
 [connection signal="code_correct" from="RecordPlayer/CombinationLock" to="." method="_on_CombinationLock_code_correct"]
-[connection signal="new_playback_speed" from="RecordPlayer/CombinationLock" to="MusicMix" method="_on_CombinationLock_new_playback_speed"]
+[connection signal="is_pressed" from="RecordPlayer/MouseHotspot" to="." method="_on_MouseHotspot_is_pressed"]
 
 [editable path="RecordPlayer/CombinationLock"]
