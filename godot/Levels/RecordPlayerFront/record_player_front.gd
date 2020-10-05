@@ -4,16 +4,17 @@ onready var vinyl = $RecordPlayer/Vinyl
 onready var combinationLock = $RecordPlayer/CombinationLock
 onready var recordPlayerNeedle = $RecordPlayer/RecordPlayerNeedle
 onready var mouseHotspot = $RecordPlayer/MouseHotspot
+onready var _tween = $Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	mouseHotspot.hide()
-	combinationLock.connect("new_playback_speed",vinyl,"update_playback_speed")
-	combinationLock.connect("new_playback_speed",recordPlayerNeedle,"update_playback_speed")
+	mouseHotspot.hide()	
+	combination_lock.connect("new_playback_speed",vinyl,"update_playback_speed")
+	combination_lock.connect("new_playback_speed",record_player_needle,"update_playback_speed")
 
 func _on_CombinationLock_code_correct():
 	SoundController.pub_play_effect("res://Levels/RecordPlayerFront/Sounds/finalKlick.ogg",5)
 	mouseHotspot.show()
-	
-func _on_MouseHotspot_is_pressed():
-	get_tree().change_scene("res://Menu/MainMenu/MainMenu.tscn")
+	SoundController.pub_play_effect("res://Levels/RecordPlayerFront/panel_woosh.wav", 3, 10)
+	_tween.interpolate_property(combination_lock, "margin_left", null, -1200, 1.5, Tween.TRANS_EXPO)
+	_tween.start()

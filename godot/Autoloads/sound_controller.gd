@@ -96,4 +96,5 @@ func sig_music_finished(channel: int) -> void:
 
 
 func sig_effect_finished(channel: int) -> void:
+	_effect[channel].stop()
 	pass
