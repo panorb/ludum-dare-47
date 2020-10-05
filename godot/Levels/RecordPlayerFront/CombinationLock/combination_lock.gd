@@ -11,6 +11,7 @@ export(int,1,5) var digit_number := 3
 var number := 665 setget set_number # Currently displayed number
 var mode := 0 # Which digit are we editing? 10^mode
 var correct_answer := 666
+var click_sounds := ["res://Levels/RecordPlayerFront/Sounds/lockButton2.ogg","res://Levels/RecordPlayerFront/Sounds/lockButton3.ogg","res://Levels/RecordPlayerFront/Sounds/lockButton.ogg"]
 
 signal code_correct
 signal new_playback_speed(playback_speed)
