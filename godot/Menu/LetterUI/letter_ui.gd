@@ -24,8 +24,11 @@ func show_inbox_notification():
 	tween.start()
 
 func show_centered_letter():
+	letter.visible = true
 	var current_letter : String = LetterTexts.LETTERS[current_letter_idx]
 	letter.letter_text = current_letter
+	
+	current_letter_idx += 1
 
 func _on_Tween_tween_completed(object, key):
 	if object == inbox_notification and key == ":rect_scale":
