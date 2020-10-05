@@ -1,14 +1,18 @@
 extends Control
 
 onready var vinyl = $RecordPlayer/Vinyl
-onready var combinationLock = $RecordPlayer/CombinationLock
-onready var recordPlayerNeedle = $RecordPlayer/RecordPlayerNeedle
+onready var combination_lock = $Interactables/CombinationLock
+onready var record_player_needle = $RecordPlayer/RecordPlayerNeedle
+
+onready var _tween = $Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	combinationLock.connect("new_playback_speed",vinyl,"update_playback_speed")
-	combinationLock.connect("new_playback_speed",recordPlayerNeedle,"update_playback_speed")
+	combination_lock.connect("new_playback_speed",vinyl,"update_playback_speed")
+	combination_lock.connect("new_playback_speed",record_player_needle,"update_playback_speed")
 
 
 func _on_CombinationLock_code_correct():
-	print("You did it!")
+	SoundController.pub_play_effect("res://Levels/RecordPlayerFront/panel_woosh.wav", 3, 10)
+	_tween.interpolate_property(combination_lock, "margin_left", null, -1200, 1.5, Tween.TRANS_EXPO)
+	_tween.start()

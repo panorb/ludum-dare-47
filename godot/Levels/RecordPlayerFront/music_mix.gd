@@ -1,7 +1,7 @@
 extends Node
 
 onready var tween = $Tween
-onready var combination_lock = $"../RecordPlayer/CombinationLock"
+onready var combination_lock = $"../Interactables/CombinationLock"
 
 export(String, FILE, "*.ogg") var bgm_unsolved := ""
 export(String, FILE, "*.ogg") var bgm_solved := ""
