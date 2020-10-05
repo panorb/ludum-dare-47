@@ -1,0 +1,8 @@
+  05.10.2020 15:36:39: Starting composition “main 2”.
+
+  Output To: C:\Users\Leo\Desktop\main 2 (0-00-00-00).png    05.10.2020 15:36:39: Finished composition “main 2”.
+
+
+  Total Time Elapsed: 0 Seconds
+Log closed on 05.10.2020 at 15:36:39
+
