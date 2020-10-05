@@ -35,7 +35,7 @@ size_flags_horizontal = 7
 size_flags_vertical = 7
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 180.831, 180.752 )
-patch_margin_top = 10
+patch_margin_top = 12
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 __meta__ = {
@@ -49,6 +49,7 @@ margin_top = 7.0
 margin_right = 271.0
 margin_bottom = 319.0
 grow_horizontal = 2
+mouse_filter = 0
 size_flags_horizontal = 5
 size_flags_vertical = 5
 __meta__ = {
@@ -99,6 +100,6 @@ rect_min_size = Vector2( 0, 100 )
 
 [node name="Control" type="Control" parent="HBoxContainer"]
 margin_left = 164.0
-margin_right = 264.0
+margin_right = 254.0
 margin_bottom = 312.0
-rect_min_size = Vector2( 100, 0 )
+rect_min_size = Vector2( 90, 0 )
