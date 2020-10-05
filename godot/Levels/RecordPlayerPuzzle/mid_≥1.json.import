@@ -1,0 +1,23 @@
+[remap]
+
+importer="lottie_sprite"
+type="PackedScene"
+path="res://.import/mid_≥1.json-b9327be49502d2056f8bb0c711bff096.scn"
+
+[deps]
+
+files=[ "res://.import/mid_≥1.json-b9327be49502d2056f8bb0c711bff096.scn" ]
+
+source_file="res://Levels/RecordPlayerPuzzle/mid_≥1.json"
+dest_files=[ "res://.import/mid_≥1.json-b9327be49502d2056f8bb0c711bff096.scn", "res://.import/mid_≥1.json-b9327be49502d2056f8bb0c711bff096.scn" ]
+
+[params]
+
+3d=false
+compress/lossy=true
+compress/lossy_quality=0.7
+start_frame=0
+skip_frames=0
+scale=Vector2( 1, 1 )
+animation/import=true
+animation/begin_playing=true

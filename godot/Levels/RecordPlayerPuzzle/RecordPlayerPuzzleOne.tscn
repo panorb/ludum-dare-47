@@ -1,13 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/puzzle_one_base.png" type="Texture" id=1]
 [ext_resource path="res://Levels/RecordPlayerPuzzle/DecoWheel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/ButtonPrefap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/EndPrefep.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/MidPrefap.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/mid_&_off.png" type="Texture" id=6]
-[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/mid_=1_off.png" type="Texture" id=7]
-[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/end_&_off.png" type="Texture" id=8]
 [ext_resource path="res://Levels/RecordPlayerPuzzle/record_player_puzzle_one.gd" type="Script" id=9]
 
 [node name="RecordPlayerPuzzleOne" type="CanvasLayer"]
@@ -22,9 +19,6 @@ margin_left = 60.0
 margin_top = 640.0
 margin_right = 982.0
 margin_bottom = 962.0
-texture = ExtResource( 8 )
-off_texture = "res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/end_&_off.png"
-on_texture = "res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/end_&_on.png"
 
 [node name="Buttons" type="Control" parent="."]
 margin_right = 40.0
@@ -64,25 +58,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MidAnd" parent="Mid" instance=ExtResource( 5 )]
-margin_left = 600.0
-margin_top = 1120.0
-margin_right = 922.0
-margin_bottom = 1442.0
-texture = ExtResource( 6 )
-type = "AND"
-off_texture = "res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/mid_&_off.png"
-on_texture = "res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/mid_&_on.png"
-
-[node name="MidXor" parent="Mid" instance=ExtResource( 5 )]
+[node name="MidOne" parent="Mid" instance=ExtResource( 5 )]
 margin_left = 110.0
 margin_top = 1120.0
 margin_right = 432.0
 margin_bottom = 1442.0
-texture = ExtResource( 7 )
 type = "XOR"
-off_texture = "res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/mid_=1_off.png"
-on_texture = "res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/mid_=1_on.png"
+
+[node name="MidTwo" parent="Mid" instance=ExtResource( 5 )]
+margin_left = 600.0
+margin_top = 1120.0
+margin_right = 922.0
+margin_bottom = 1442.0
+type = "AND"
+port_one_negated = true
 
 [node name="DecoWheels" type="Node2D" parent="."]
 position = Vector2( 10, 0 )
@@ -96,11 +85,11 @@ position = Vector2( 125, 325 )
 [node name="DecoWheel3" parent="DecoWheels" instance=ExtResource( 2 )]
 position = Vector2( 125, 525 )
 [connection signal="got_changed" from="EndAnd" to="." method="_on_EndPrefep_got_changed"]
-[connection signal="got_pressed" from="Buttons/ButtonOne" to="Mid/MidXor" method="_on_Button1_got_pressed"]
-[connection signal="got_pressed" from="Buttons/ButtonTwo" to="Mid/MidXor" method="_on_Button2_got_pressed"]
-[connection signal="got_pressed" from="Buttons/ButtonThree" to="Mid/MidAnd" method="_on_Button3_got_pressed"]
-[connection signal="got_pressed" from="Buttons/ButtonFour" to="Mid/MidAnd" method="_on_Button4_got_pressed"]
-[connection signal="got_changed" from="Mid/MidAnd" to="EndAnd" method="_on_MidAnd_got_changed"]
-[connection signal="got_changed" from="Mid/MidAnd" to="." method="_on_MidAnd_got_changed"]
-[connection signal="got_changed" from="Mid/MidXor" to="EndAnd" method="_on_MidXor_got_changed"]
-[connection signal="got_changed" from="Mid/MidXor" to="." method="_on_MidXor_got_changed"]
+[connection signal="got_pressed" from="Buttons/ButtonOne" to="Mid/MidOne" method="_on_Button1_got_pressed"]
+[connection signal="got_pressed" from="Buttons/ButtonTwo" to="Mid/MidOne" method="_on_Button2_got_pressed"]
+[connection signal="got_pressed" from="Buttons/ButtonThree" to="Mid/MidTwo" method="_on_Button3_got_pressed"]
+[connection signal="got_pressed" from="Buttons/ButtonFour" to="Mid/MidTwo" method="_on_Button4_got_pressed"]
+[connection signal="got_changed" from="Mid/MidOne" to="." method="_on_MidXor_got_changed"]
+[connection signal="got_changed" from="Mid/MidOne" to="EndAnd" method="_on_MidXor_got_changed"]
+[connection signal="got_changed" from="Mid/MidTwo" to="." method="_on_MidAnd_got_changed"]
+[connection signal="got_changed" from="Mid/MidTwo" to="EndAnd" method="_on_MidAnd_got_changed"]

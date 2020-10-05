@@ -1,9 +1,33 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Levels/RecordPlayerPuzzle/mid_&.json" type="PackedScene" id=1]
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/mid_prefap.gd" type="Script" id=2]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/mid_=1.json" type="PackedScene" id=3]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/mid_≥1.json" type="PackedScene" id=4]
 
 [node name="MidPrefap" type="TextureRect"]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AND" parent="." instance=ExtResource( 1 )]
+visible = false
+frame = 30
+playing = false
+centered = false
+
+[node name="XOR" parent="." instance=ExtResource( 3 )]
+visible = false
+frame = 5
+playing = false
+centered = false
+
+[node name="OR" parent="." instance=ExtResource( 4 )]
+visible = false
+frame = 16
+playing = false
+centered = false
+[connection signal="animation_finished" from="AND" to="." method="_on_AND_animation_finished"]
+[connection signal="animation_finished" from="XOR" to="." method="_on_XOR_animation_finished"]
+[connection signal="animation_finished" from="OR" to="." method="_on_OR_animation_finished"]
