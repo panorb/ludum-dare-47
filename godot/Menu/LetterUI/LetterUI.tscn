@@ -40,20 +40,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="Control/VBoxContainer"]
-margin_right = 278.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
 [node name="InboxNotification" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
 margin_left = 0.0
-margin_top = 4.0
+margin_top = 0.0
 margin_right = 278.0
-margin_bottom = 330.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 278, 326 )
-rect_pivot_offset = Vector2( 139, 163 )
+margin_bottom = 326.0
 
 [node name="Tween" type="Tween" parent="."]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

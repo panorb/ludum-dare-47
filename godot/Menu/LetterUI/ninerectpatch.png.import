@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ninerectpatch.png-30bf7bd957996c8e0847b75bc427a6c0.stex"
+path="res://.import/ninerectpatch.png-867aaf8a356ae294b0bd0c2111b61903.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/RecordPlayerFront/Letters/ninerectpatch.png"
-dest_files=[ "res://.import/ninerectpatch.png-30bf7bd957996c8e0847b75bc427a6c0.stex" ]
+source_file="res://Menu/LetterUI/ninerectpatch.png"
+dest_files=[ "res://.import/ninerectpatch.png-867aaf8a356ae294b0bd0c2111b61903.stex" ]
 
 [params]
 
