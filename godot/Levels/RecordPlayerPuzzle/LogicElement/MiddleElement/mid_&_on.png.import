@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mid_=1_off.png-41469d7a1e08eae36ba0d9e2207813f7.stex"
+path="res://.import/mid_&_on.png-157b0162b771c21f9b904150560c450a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/mid_=1_off.png"
-dest_files=[ "res://.import/mid_=1_off.png-41469d7a1e08eae36ba0d9e2207813f7.stex" ]
+source_file="res://Levels/RecordPlayerPuzzle/LogicElement/MiddleElement/mid_&_on.png"
+dest_files=[ "res://.import/mid_&_on.png-157b0162b771c21f9b904150560c450a.stex" ]
 
 [params]
 

@@ -9,6 +9,7 @@ func _ready():
 
 func _on_ButtonPrefap_pressed():
 	animated_sprite.play("default",pressed)
+	SoundController.pub_play_effect("res://Levels/RecordPlayerPuzzle/LogicElement/Button/LogicButtonPress.wav",3)
 	emit_signal("got_pressed",pressed)
 
 func _on_AnimatedSprite_animation_finished():

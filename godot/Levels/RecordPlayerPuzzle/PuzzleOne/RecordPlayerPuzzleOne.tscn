@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/puzzle_one_base.png" type="Texture" id=1]
 [ext_resource path="res://Levels/RecordPlayerPuzzle/DecoWheel.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/ButtonPrefap.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/EndPrefep.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/LogicElement/MidPrefap.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Levels/RecordPlayerPuzzle/record_player_puzzle_one.gd" type="Script" id=9]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/LogicElement/Button/ButtonPrefap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/LogicElement/EndElement/EndPrefep.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/LogicElement/MiddleElement/MidPrefap.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/record_player_puzzle_one.gd" type="Script" id=9]
 
 [node name="RecordPlayerPuzzleOne" type="CanvasLayer"]
 script = ExtResource( 9 )
