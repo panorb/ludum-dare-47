@@ -5,7 +5,10 @@
 [ext_resource path="res://Menu/LetterUI/letter.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 80
+size = 54
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_bottom = -20
 font_data = ExtResource( 2 )
 
 [node name="Letter" type="PanelContainer"]
@@ -76,11 +79,12 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
 margin_top = 104.0
 margin_right = 56.0
-margin_bottom = 208.0
+margin_bottom = 160.0
 grow_horizontal = 2
 rect_min_size = Vector2( 56, 56 )
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.219608, 0.215686, 0.215686, 1 )
 align = 1
 valign = 1
 __meta__ = {
@@ -88,9 +92,9 @@ __meta__ = {
 }
 
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer"]
-margin_top = 212.0
+margin_top = 164.0
 margin_right = 56.0
-margin_bottom = 312.0
+margin_bottom = 264.0
 rect_min_size = Vector2( 0, 100 )
 
 [node name="Control" type="Control" parent="HBoxContainer"]
