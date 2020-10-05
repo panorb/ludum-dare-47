@@ -14,9 +14,8 @@
 script = ExtResource( 9 )
 
 [node name="PuzzleOneBase" type="Sprite" parent="."]
-scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
-offset = Vector2( 260.213, 500.019 )
+offset = Vector2( 520.021, 1000.01 )
 
 [node name="EndAnd" parent="." instance=ExtResource( 4 )]
 margin_left = 60.0
