@@ -2,6 +2,8 @@ extends Panel
 
 
 signal is_pressed
+signal entered
+signal exited
 var is_on := false
 
 func _on_HotspotButton_pressed():

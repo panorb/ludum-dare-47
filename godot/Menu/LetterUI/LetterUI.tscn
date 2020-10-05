@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://Shared/MouseHotspot/MouseHotspot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Menu/LetterUI/letter_ui.gd" type="Script" id=2]
 [ext_resource path="res://Menu/LetterUI/Letter.tscn" type="PackedScene" id=3]
 
@@ -20,31 +21,45 @@ __meta__ = {
 
 [node name="Letter" parent="CenterView" instance=ExtResource( 3 )]
 
-[node name="Control" type="Control" parent="."]
+[node name="Notification" type="HBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-margin_left = -278.0
-margin_top = -330.0
-margin_bottom = 3.05176e-05
 grow_horizontal = 0
 grow_vertical = 0
-rect_min_size = Vector2( 278, 330 )
+rect_min_size = Vector2( 302, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InboxNotification" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 278.0
+[node name="Control" type="Control" parent="Notification"]
+margin_right = 8.0
 margin_bottom = 326.0
+rect_min_size = Vector2( 8, 0 )
+
+[node name="InboxNotification" parent="Notification" instance=ExtResource( 3 )]
+margin_left = 12.0
+margin_top = 0.0
+margin_right = 290.0
+margin_bottom = 326.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+
+[node name="Control2" type="Control" parent="Notification"]
+margin_left = 294.0
+margin_right = 302.0
+margin_bottom = 326.0
+rect_min_size = Vector2( 8, 0 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="MouseHotspot" parent="." instance=ExtResource( 1 )]
+anchor_left = 1.0
+anchor_top = 1.0
+margin_left = -301.0
+margin_top = -324.0
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="entered" from="MouseHotspot" to="." method="_on_MouseHotspot_entered"]
+[connection signal="exited" from="MouseHotspot" to="." method="_on_MouseHotspot_exited"]
+[connection signal="is_pressed" from="MouseHotspot" to="." method="_on_MouseHotspot_is_pressed"]
