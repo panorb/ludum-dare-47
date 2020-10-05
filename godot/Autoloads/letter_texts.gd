@@ -48,7 +48,7 @@ if pressed. The gates will send a current to the next gate if they
 receive the correct input.
 
 Cheers 
-Konstantin """
+Konstantin"""
 
 const FINAL_LETTER = """Dear Lea,
 
@@ -58,7 +58,7 @@ time in 25 years I could sit in the living room where I grow up without
 this sound of terror.
 
 With love
-Jan """
+Jan"""
 
 
 
