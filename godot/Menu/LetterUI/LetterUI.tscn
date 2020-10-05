@@ -11,6 +11,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+available_letters = [ "res://Levels/RecordPlayerFront/Letters/IntroLetter.txt", "res://Levels/RecordPlayerFront/Letters/SolutionLetter.txt" ]
 
 [node name="CenterView" type="CenterContainer" parent="."]
 anchor_right = 1.0
@@ -26,9 +27,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -302.0
+margin_top = -326.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_min_size = Vector2( 302, 0 )
+rect_pivot_offset = Vector2( 151, 163 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,6 +47,7 @@ margin_left = 12.0
 margin_top = 0.0
 margin_right = 290.0
 margin_bottom = 326.0
+rect_pivot_offset = Vector2( 139, 163 )
 size_flags_horizontal = 7
 size_flags_vertical = 7
 
