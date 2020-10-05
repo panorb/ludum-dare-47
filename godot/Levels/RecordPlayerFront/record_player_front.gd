@@ -54,4 +54,4 @@ func _on_PuzzleThreeController_done():
 
 
 func _on_PuzzleFourController_done():
-	SceneChanger("res://Levels/Outro/OutroScene.tscn")
+	SceneChanger.change_scene("res://Levels/Outro/OutroScene.tscn")
