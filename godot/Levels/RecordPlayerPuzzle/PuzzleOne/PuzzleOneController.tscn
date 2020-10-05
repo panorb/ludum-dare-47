@@ -4,7 +4,7 @@
 [ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/puzzle_one_controller.gd" type="Script" id=2]
 [ext_resource path="res://Shared/MouseHotspot/MouseHotspot.tscn" type="PackedScene" id=3]
 
-[node name="PuzzleOneController" type="Node2D"]
+[node name="PuzzleOneController" type="CanvasLayer"]
 script = ExtResource( 2 )
 loadable_textures = [ "", "", "", "", "", "" ]
 
@@ -12,8 +12,8 @@ loadable_textures = [ "", "", "", "", "", "" ]
 
 [node name="MouseHotspot" parent="." instance=ExtResource( 3 )]
 margin_top = 650.0
-margin_right = 1050.0
-margin_bottom = 1950.0
+margin_right = -2805.0
+margin_bottom = -160.0
 [connection signal="is_active" from="RecordPlayerPuzzleOne" to="." method="_on_RecordPlayerPuzzleOne_is_active"]
 [connection signal="is_pressed" from="MouseHotspot" to="." method="_on_MouseHotspot_is_pressed"]
 

@@ -26,3 +26,4 @@ func _on_EndPrefep_got_changed(is_active):
 		emit_signal("is_active")
 	else:
 		deco_wheel3.rotation_speed = 0.0
+

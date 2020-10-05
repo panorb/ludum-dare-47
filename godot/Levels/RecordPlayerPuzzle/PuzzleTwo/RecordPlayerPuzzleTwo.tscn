@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Levels/RecordPlayerPuzzle/DecoWheel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/LogicElement/EndElement/EndPrefep.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/LogicElement/MiddleElement/MidPrefap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/LogicElement/Button/ButtonPrefap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleTwo/base.png" type="Texture" id=5]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleOne/record_player_puzzle_one.gd" type="Script" id=6]
+
+[node name="RecordPlayerPuzzleTwo" type="CanvasLayer"]
+script = ExtResource( 6 )
+
+[node name="PuzzleTwoBase" type="Sprite" parent="."]
+position = Vector2( -3.36377, 0 )
+texture = ExtResource( 5 )
+offset = Vector2( 520.021, 1000.01 )
+
+[node name="EndAnd" parent="." instance=ExtResource( 2 )]
+margin_left = 60.0
+margin_top = 640.0
+margin_right = 982.0
+margin_bottom = 962.0
+
+[node name="Buttons" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonOne" parent="Buttons" instance=ExtResource( 4 )]
+margin_left = 50.0
+margin_top = 1600.0
+margin_right = 250.0
+margin_bottom = 1920.0
+
+[node name="ButtonTwo" parent="Buttons" instance=ExtResource( 4 )]
+margin_left = 300.0
+margin_top = 1600.0
+margin_right = 500.0
+margin_bottom = 1920.0
+
+[node name="ButtonThree" parent="Buttons" instance=ExtResource( 4 )]
+margin_left = 550.0
+margin_top = 1600.0
+margin_right = 750.0
+margin_bottom = 1920.0
+
+[node name="ButtonFour" parent="Buttons" instance=ExtResource( 4 )]
+margin_left = 797.622
+margin_top = 1600.0
+margin_right = 997.622
+margin_bottom = 1920.0
+
+[node name="Mid" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MidOne" parent="Mid" instance=ExtResource( 3 )]
+margin_left = 110.0
+margin_top = 1120.0
+margin_right = 432.0
+margin_bottom = 1442.0
+type = "XOR"
+
+[node name="MidTwo" parent="Mid" instance=ExtResource( 3 )]
+margin_left = 600.0
+margin_top = 1120.0
+margin_right = 922.0
+margin_bottom = 1442.0
+type = "AND"
+port_one_negated = true
+
+[node name="DecoWheels" type="Node2D" parent="."]
+position = Vector2( 10, 0 )
+
+[node name="DecoWheel1" parent="DecoWheels" instance=ExtResource( 1 )]
+position = Vector2( 125, 125 )
+
+[node name="DecoWheel2" parent="DecoWheels" instance=ExtResource( 1 )]
+position = Vector2( 125, 325 )
+
+[node name="DecoWheel3" parent="DecoWheels" instance=ExtResource( 1 )]
+position = Vector2( 125, 525 )
+[connection signal="got_changed" from="EndAnd" to="." method="_on_EndPrefep_got_changed"]
+[connection signal="forced_press" from="Buttons/ButtonOne" to="Mid/MidOne" method="_on_ButtonOne_forced_press"]
+[connection signal="got_pressed" from="Buttons/ButtonOne" to="Mid/MidOne" method="_on_Button1_got_pressed"]
+[connection signal="forced_press" from="Buttons/ButtonTwo" to="Mid/MidOne" method="_on_ButtonTwo_forced_press"]
+[connection signal="got_pressed" from="Buttons/ButtonTwo" to="Mid/MidOne" method="_on_Button2_got_pressed"]
+[connection signal="forced_press" from="Buttons/ButtonThree" to="Mid/MidTwo" method="_on_ButtonThree_forced_press"]
+[connection signal="got_pressed" from="Buttons/ButtonThree" to="Mid/MidTwo" method="_on_Button3_got_pressed"]
+[connection signal="forced_press" from="Buttons/ButtonFour" to="Mid/MidTwo" method="_on_ButtonFour_forced_press"]
+[connection signal="got_pressed" from="Buttons/ButtonFour" to="Mid/MidTwo" method="_on_Button4_got_pressed"]
+[connection signal="got_changed" from="Mid/MidOne" to="EndAnd" method="_on_MidXor_got_changed"]
+[connection signal="got_changed" from="Mid/MidOne" to="." method="_on_MidXor_got_changed"]
+[connection signal="got_changed" from="Mid/MidTwo" to="EndAnd" method="_on_MidAnd_got_changed"]
+[connection signal="got_changed" from="Mid/MidTwo" to="." method="_on_MidAnd_got_changed"]

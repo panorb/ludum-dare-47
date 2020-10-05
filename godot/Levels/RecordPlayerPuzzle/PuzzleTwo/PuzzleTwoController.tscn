@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleTwo/RecordPlayerPuzzleTwo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleTwo/puzzle_two_controller.gd" type="Script" id=2]
+[ext_resource path="res://Shared/MouseHotspot/MouseHotspot.tscn" type="PackedScene" id=3]
+
+[node name="PuzzleTwoController" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="RecordPlayerPuzzleTwo" parent="." instance=ExtResource( 1 )]
+
+[node name="MouseHotspot" parent="." instance=ExtResource( 3 )]
+margin_top = 650.0
+margin_right = -2805.0
+margin_bottom = -160.0
+[connection signal="is_active" from="RecordPlayerPuzzleTwo" to="." method="_on_RecordPlayerPuzzleTwo_is_active"]
+[connection signal="pressed" from="RecordPlayerPuzzleTwo/Buttons/ButtonOne" to="." method="_on_ButtonOne_pressed"]
+[connection signal="pressed" from="RecordPlayerPuzzleTwo/Buttons/ButtonTwo" to="." method="_on_ButtonTwo_pressed"]
+[connection signal="pressed" from="RecordPlayerPuzzleTwo/Buttons/ButtonThree" to="." method="_on_ButtonThree_pressed"]
+[connection signal="pressed" from="RecordPlayerPuzzleTwo/Buttons/ButtonFour" to="." method="_on_ButtonFour_pressed"]
+[connection signal="is_pressed" from="MouseHotspot" to="." method="_on_MouseHotspot_is_pressed"]
+
+[editable path="RecordPlayerPuzzleTwo"]
