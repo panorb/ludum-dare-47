@@ -35,7 +35,7 @@ __meta__ = {
 [node name="MusicMix" type="Node" parent="."]
 script = ExtResource( 7 )
 bgm_unsolved = "res://Shared/static_noise.ogg"
-bgm_solved = "res://Levels/RecordPlayerFront/Song.ogg"
+bgm_solved = "res://Shared/bgm/song_part_1.ogg"
 
 [node name="Tween" type="Tween" parent="MusicMix"]
 
@@ -113,7 +113,7 @@ visible = false
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 707, 225 )
 scale = Vector2( 0.5, 0.5 )
-frame = 12
+frame = 7
 
 [node name="HintFadeIn" type="AnimationPlayer" parent="Interactables/Control/PlayerHint"]
 anims/FadeIn = SubResource( 1 )

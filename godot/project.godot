@@ -30,6 +30,7 @@ SoundController="*res://Autoloads/sound_controller.gd"
 StateMachineScene="*res://StateMachine/StateMachine.tscn"
 LetterTexts="*res://Autoloads/letter_texts.gd"
 SceneChanger="*res://SceneChanger/SceneChanger.tscn"
+A="*res://Autoloads/audio_vars.gd"
 
 [display]
 

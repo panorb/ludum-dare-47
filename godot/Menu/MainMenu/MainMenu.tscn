@@ -130,5 +130,8 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="."]
 [connection signal="timeout" from="LetterTimer" to="." method="_on_LetterTimer_timeout"]
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
+[connection signal="mouse_entered" from="CanvasLayer/HBoxContainer/VBoxContainer/PlayButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer/HBoxContainer/VBoxContainer/VolumeButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_button_mouse_entered"]
 [connection signal="letter_unfocused" from="CanvasLayer/LetterUI" to="." method="_on_LetterUI_letter_unfocused"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

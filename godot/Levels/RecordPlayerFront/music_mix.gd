@@ -13,7 +13,7 @@ export(float) var max_transition_time : float = 3
 var k : float = 0 setget set_music_mix
 
 func _ready():
-	SoundController.pub_play_music(bgm_unsolved, 0, linear2db(1))
+	SoundController.pub_play_music(bgm_unsolved, 0, linear2db(A.vol_mul))
 	SoundController.pub_play_music(bgm_solved, 1, linear2db(0))
 	refresh_music_mix()
 
@@ -35,8 +35,8 @@ func refresh_music_mix():
 
 func set_music_mix(new_k : float):
 	k = new_k
-	var volume_1 = linear2db(k)
-	var volume_2 = linear2db(1-k)
+	var volume_1 = linear2db((k)*A.vol_mul)
+	var volume_2 = linear2db((1-k)*A.vol_mul)
 	
 	SoundController.pub_set_music_volume_db(0, volume_1)
 	SoundController.pub_set_music_volume_db(1, volume_2)

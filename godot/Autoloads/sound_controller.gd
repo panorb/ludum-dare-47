@@ -7,9 +7,10 @@ var _music: Array = []
 onready var _tween: Tween = null
 
 # Settings that should be put into an Options script
-const DEFAULT_MUSIC_VOLUME: int = -12
-const DEFAULT_EFFECT_VOLUME: int = -12
+const DEFAULT_MUSIC_VOLUME: int = -40
+const DEFAULT_EFFECT_VOLUME: int = -40
 
+signal song_finished(channel)
 
 func _ready() -> void:
 	_tween = Tween.new()
@@ -96,6 +97,7 @@ func pub_stop_all() -> void:
 
 
 func sig_music_finished(channel: int) -> void:
+	emit_signal("song_finished", channel)
 	pass
 
 

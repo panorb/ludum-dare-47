@@ -11,6 +11,9 @@ onready var play_button = $CanvasLayer/HBoxContainer/VBoxContainer/PlayButton
 onready var volume_button = $CanvasLayer/HBoxContainer/VBoxContainer/VolumeButton
 onready var exit_button = $CanvasLayer/HBoxContainer/VBoxContainer/ExitButton
 
+func _ready():
+	SoundController.connect("song_finished", self, "_on_song_finished")
+
 func _on_LetterTimer_timeout():
 	letter_ui.show_inbox_notification()
 
@@ -18,6 +21,7 @@ func _on_LetterUI_letter_unfocused():
 	video_player.play()
 	yield(get_tree().create_timer(0.1), "timeout")
 	video_player.visible = true
+	SoundController.pub_play_music("res://Shared/intro_with_melody.ogg", 1, linear2db(6*A.vol_mul))
 
 func _on_VideoPlayer_finished():
 	print("_on_VideoPlayer_finished")
@@ -29,3 +33,13 @@ func _on_Tween_tween_completed(object, key):
 		play_button.disabled = false
 		volume_button.disabled = false
 		exit_button.disabled = false
+
+# Switch to song without melody after first loop.
+# First part of song was imported with loop off
+func _on_song_finished(channel: int):
+	if channel == 1:
+		SoundController.pub_play_music("res://Shared/intro_without_melody.ogg", 1, linear2db(6*A.vol_mul))
+
+
+func _on_button_mouse_entered():
+	SoundController.pub_play_effect("res://Menu/option_switched.wav", 2, linear2db(10 * A.vol_mul))

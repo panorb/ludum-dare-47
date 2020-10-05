@@ -21,6 +21,7 @@ signal letter_focused
 signal letter_unfocused
 
 func show_inbox_notification():
+	SoundController.pub_play_effect("res://Menu/LetterUI/letter_appears.wav", 7, linear2db(6*A.vol_mul))
 	tween.interpolate_property(inbox_notification, ":rect_scale", Vector2(0.01, 0.01), notifaction_min_scale, 3*notification_scaling_time, trans_type)
 	tween.interpolate_property(letter_hotspot, ":visible", false, true, 2*notification_scaling_time)
 	
@@ -29,6 +30,7 @@ func show_inbox_notification():
 	tween.start()
 
 func show_centered_letter():
+	SoundController.pub_play_effect("res://Menu/LetterUI/letter_opening.wav", 7, linear2db(6*A.vol_mul))
 	visible = true
 	letter.visible = true
 	fullscreen_hotspot.visible = true
@@ -39,6 +41,7 @@ func show_centered_letter():
 	current_letter_idx += 1
 
 func close_focused_letter():
+	SoundController.pub_play_effect("res://Menu/LetterUI/letter_closing.wav", 7, linear2db(6*A.vol_mul))
 	visible = false
 	fullscreen_hotspot.visible = false
 	emit_signal("letter_unfocused")
