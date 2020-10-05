@@ -1,30 +1,24 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/combination_lock.gd" type="Script" id=1]
 [ext_resource path="res://Shared/IBMPlexSans-Light.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/combination_lock.png" type="Texture" id=3]
+[ext_resource path="res://Levels/RecordPlayerFront/Buttons/slow_off.png" type="Texture" id=4]
+[ext_resource path="res://Levels/RecordPlayerFront/Buttons/fast_off.png" type="Texture" id=5]
+[ext_resource path="res://Levels/RecordPlayerFront/Buttons/speed_off.png" type="Texture" id=6]
+[ext_resource path="res://Levels/RecordPlayerFront/Buttons/slow_on.png" type="Texture" id=7]
+[ext_resource path="res://Levels/RecordPlayerFront/Buttons/fast_on.png" type="Texture" id=8]
+[ext_resource path="res://Levels/RecordPlayerFront/Buttons/speed_on.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 180
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 128
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 128
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 128
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=5]
 size = 48
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 resource_name = "d1tod3"
 length = 0.7
 tracks/0/type = "bezier"
@@ -38,7 +32,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.7 )
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 resource_name = "d2tod1"
 length = 0.5
 tracks/0/type = "bezier"
@@ -52,7 +46,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 )
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 length = 0.5
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("ActiveDigit:margin_right")
@@ -66,8 +60,6 @@ tracks/0/keys = {
 }
 
 [node name="CombinationLock" type="TextureRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 texture = ExtResource( 3 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -96,48 +88,46 @@ align = 1
 [node name="ButtonContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 239.0
 margin_right = 800.0
-margin_bottom = 550.0
+margin_bottom = 511.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+alignment = 1
 
-[node name="ButtonSubtract" type="Button" parent="VBoxContainer/ButtonContainer"]
-modulate = Color( 1, 1, 1, 0 )
+[node name="ButtonSubtract" type="TextureButton" parent="VBoxContainer/ButtonContainer"]
 margin_right = 264.0
-margin_bottom = 311.0
+margin_bottom = 272.0
+mouse_filter = 1
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
-text = "-"
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 7 )
 
-[node name="ButtonMode" type="Button" parent="VBoxContainer/ButtonContainer"]
-modulate = Color( 1, 1, 1, 0 )
+[node name="ButtonMode" type="TextureButton" parent="VBoxContainer/ButtonContainer"]
 margin_left = 268.0
 margin_right = 532.0
-margin_bottom = 311.0
+margin_bottom = 272.0
+mouse_filter = 1
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
-text = "M"
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 9 )
 
-[node name="ButtonAdd" type="Button" parent="VBoxContainer/ButtonContainer"]
-modulate = Color( 1, 1, 1, 0 )
+[node name="ButtonAdd" type="TextureButton" parent="VBoxContainer/ButtonContainer"]
 margin_left = 536.0
 margin_right = 800.0
-margin_bottom = 311.0
+margin_bottom = 272.0
+mouse_filter = 1
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = SubResource( 4 )
-text = "+"
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 8 )
 
 [node name="ActiveDigit" type="Label" parent="."]
 margin_left = 120.0
 margin_top = 1506.0
 margin_right = 703.0
 margin_bottom = 1577.21
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0980392, 0.0941176, 0.0980392, 1 )
 text = "^"
 align = 1
@@ -147,9 +137,9 @@ __meta__ = {
 
 [node name="DigitAnimation" type="AnimationPlayer" parent="."]
 autoplay = "d1tod3"
-anims/d1tod3 = SubResource( 6 )
-anims/d2tod1 = SubResource( 7 )
-anims/d3tod2 = SubResource( 8 )
+anims/d1tod3 = SubResource( 3 )
+anims/d2tod1 = SubResource( 4 )
+anims/d3tod2 = SubResource( 5 )
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/ButtonSubtract" to="." method="_on_ButtonSubtract_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/ButtonMode" to="." method="_on_ButtonMode_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/ButtonAdd" to="." method="_on_ButtonAdd_pressed"]
