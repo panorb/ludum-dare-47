@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/letter_closing.wav-9d805ac1cfe96b297c0ca586a17d4ce0.sample"
+
+[deps]
+
+source_file="res://Menu/LetterUI/letter_closing.wav"
+dest_files=[ "res://.import/letter_closing.wav-9d805ac1cfe96b297c0ca586a17d4ce0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
