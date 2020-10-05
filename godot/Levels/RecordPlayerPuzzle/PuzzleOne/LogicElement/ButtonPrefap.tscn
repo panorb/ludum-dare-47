@@ -9,8 +9,8 @@ margin_right = 40.0
 margin_bottom = 40.0
 mouse_default_cursor_shape = 2
 toggle_mode = true
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 1 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false

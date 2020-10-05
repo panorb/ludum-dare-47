@@ -34,25 +34,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button1" parent="Buttons" instance=ExtResource( 3 )]
+[node name="ButtonOne" parent="Buttons" instance=ExtResource( 3 )]
 margin_left = 50.0
 margin_top = 1600.0
 margin_right = 250.0
 margin_bottom = 1920.0
 
-[node name="Button2" parent="Buttons" instance=ExtResource( 3 )]
+[node name="ButtonTwo" parent="Buttons" instance=ExtResource( 3 )]
 margin_left = 300.0
 margin_top = 1600.0
 margin_right = 500.0
 margin_bottom = 1920.0
 
-[node name="Button3" parent="Buttons" instance=ExtResource( 3 )]
+[node name="ButtonThree" parent="Buttons" instance=ExtResource( 3 )]
 margin_left = 550.0
 margin_top = 1600.0
 margin_right = 750.0
 margin_bottom = 1920.0
 
-[node name="Button4" parent="Buttons" instance=ExtResource( 3 )]
+[node name="ButtonFour" parent="Buttons" instance=ExtResource( 3 )]
 margin_left = 797.622
 margin_top = 1600.0
 margin_right = 997.622
@@ -97,11 +97,11 @@ position = Vector2( 125, 325 )
 [node name="DecoWheel3" parent="DecoWheels" instance=ExtResource( 2 )]
 position = Vector2( 125, 525 )
 [connection signal="got_changed" from="EndAnd" to="." method="_on_EndPrefep_got_changed"]
-[connection signal="got_pressed" from="Buttons/Button1" to="Mid/MidXor" method="_on_Button1_got_pressed"]
-[connection signal="got_pressed" from="Buttons/Button2" to="Mid/MidXor" method="_on_Button2_got_pressed"]
-[connection signal="got_pressed" from="Buttons/Button3" to="Mid/MidAnd" method="_on_Button3_got_pressed"]
-[connection signal="got_pressed" from="Buttons/Button4" to="Mid/MidAnd" method="_on_Button4_got_pressed"]
-[connection signal="got_changed" from="Mid/MidAnd" to="EndAnd" method="_on_MidAnd_got_changed"]
+[connection signal="got_pressed" from="Buttons/ButtonOne" to="Mid/MidXor" method="_on_Button1_got_pressed"]
+[connection signal="got_pressed" from="Buttons/ButtonTwo" to="Mid/MidXor" method="_on_Button2_got_pressed"]
+[connection signal="got_pressed" from="Buttons/ButtonThree" to="Mid/MidAnd" method="_on_Button3_got_pressed"]
+[connection signal="got_pressed" from="Buttons/ButtonFour" to="Mid/MidAnd" method="_on_Button4_got_pressed"]
 [connection signal="got_changed" from="Mid/MidAnd" to="." method="_on_MidAnd_got_changed"]
-[connection signal="got_changed" from="Mid/MidXor" to="EndAnd" method="_on_MidXor_got_changed"]
+[connection signal="got_changed" from="Mid/MidAnd" to="EndAnd" method="_on_MidAnd_got_changed"]
 [connection signal="got_changed" from="Mid/MidXor" to="." method="_on_MidXor_got_changed"]
+[connection signal="got_changed" from="Mid/MidXor" to="EndAnd" method="_on_MidXor_got_changed"]

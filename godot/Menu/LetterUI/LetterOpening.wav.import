@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LetterOpening.wav-b27666a7bb7bda8b31327c783b537d20.sample"
+
+[deps]
+
+source_file="res://Menu/LetterUI/LetterOpening.wav"
+dest_files=[ "res://.import/LetterOpening.wav-b27666a7bb7bda8b31327c783b537d20.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
