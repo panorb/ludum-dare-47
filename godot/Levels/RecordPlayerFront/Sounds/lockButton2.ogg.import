@@ -11,5 +11,5 @@ dest_files=[ "res://.import/lockButton2.ogg-6dae0bf898902d2e442b631f3bedbcf3.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/RecordPlayerFront/record_player_front.gd" type="Script" id=1]
 [ext_resource path="res://Levels/RecordPlayerFront/base.png" type="Texture" id=2]
 [ext_resource path="res://Levels/RecordPlayerFront/CombinationLock/CombinationLock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/RecordPlayerFront/RecordPlayerNeedle/RecordPlayerNeedle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/RecordPlayerFront/Vinyl/Vinyl.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Shared/MouseHotspot/MouseHotspot.tscn" type="PackedScene" id=6]
 
 [node name="RecordPlayerFront" type="Control"]
 script = ExtResource( 1 )
@@ -37,7 +38,8 @@ texture = ExtResource( 2 )
 position = Vector2( 2059.76, 991.161 )
 
 [node name="RecordPlayerNeedle" parent="RecordPlayer" instance=ExtResource( 4 )]
-position = Vector2( 3077.86, 273.307 )
+position = Vector2( 3077.86, 273.306 )
+rotation = -1.13446
 
 [node name="CombinationLock" parent="RecordPlayer" instance=ExtResource( 3 )]
 margin_right = 1040.0
@@ -45,6 +47,13 @@ margin_bottom = 2000.0
 
 [node name="VBoxContainer" parent="RecordPlayer/CombinationLock" index="0"]
 margin_bottom = -120.0
+
+[node name="MouseHotspot" parent="RecordPlayer" instance=ExtResource( 6 )]
+margin_left = 95.888
+margin_top = 1170.86
+margin_right = 945.888
+margin_bottom = 1920.86
 [connection signal="code_correct" from="RecordPlayer/CombinationLock" to="." method="_on_CombinationLock_code_correct"]
+[connection signal="is_pressed" from="RecordPlayer/MouseHotspot" to="." method="_on_MouseHotspot_is_pressed"]
 
 [editable path="RecordPlayer/CombinationLock"]

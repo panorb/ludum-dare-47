@@ -8,6 +8,7 @@ export(int,1,5) var digit_number := 3
 var number := 128 setget set_number # Currently displayed number
 var mode := 0 # Which digit are we editing? 10^mode
 var correct_answer := 666
+var click_sounds := ["res://Levels/RecordPlayerFront/Sounds/lockButton2.ogg","res://Levels/RecordPlayerFront/Sounds/lockButton3.ogg","res://Levels/RecordPlayerFront/Sounds/lockButton.ogg"]
 
 signal code_correct
 signal new_playback_speed(playback_speed)
@@ -38,14 +39,20 @@ func code_combination_test():
 	if number == correct_answer:
 		emit_signal("code_correct")
 
+func play_random_click():
+	var random_index := randi( )%3
+	SoundController.pub_play_effect(click_sounds[random_index],3)
+	
 func _on_ButtonAdd_pressed():
 	number += pow(10, mode)
+	play_random_click()
 	refresh_number_digits()
 	code_combination_test()
 
 
 func _on_ButtonSubtract_pressed():
 	number -= pow(10, mode)
+	play_random_click()
 	refresh_number_digits()
 	code_combination_test()
 
@@ -54,5 +61,6 @@ func _on_ButtonMode_pressed():
 	if not anim.is_playing():
 		var old_mode = mode
 		mode = (mode + 1) % 3
+		play_random_click()
 		anim.play("d"+str(3-old_mode)+"tod"+str(3-mode))
 	
