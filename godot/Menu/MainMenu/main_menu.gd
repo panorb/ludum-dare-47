@@ -43,3 +43,8 @@ func _on_song_finished(channel: int):
 
 func _on_button_mouse_entered():
 	SoundController.pub_play_effect("res://Menu/option_switched.wav", 2, linear2db(10 * A.vol_mul))
+
+
+func _on_PlayButton_pressed():
+	video_player.stream = load("res://Menu/MainMenu/button_press.ogv")
+	video_player.play()
