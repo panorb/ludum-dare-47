@@ -60,6 +60,7 @@ margin_right = 1240.0
 margin_bottom = 2083.0
 mouse_filter = 1
 mouse_default_cursor_shape = 2
+color = Color( 0.0980392, 0.0941176, 0.0980392, 1 )
 
 [node name="CombinationLock" parent="Interactables" instance=ExtResource( 3 )]
 margin_left = 200.0
