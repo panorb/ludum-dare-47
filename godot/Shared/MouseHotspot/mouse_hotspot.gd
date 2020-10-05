@@ -5,7 +5,7 @@ signal is_pressed
 var is_on := false
 
 func _on_HotspotButton_pressed():
-	SoundController.pub_play_effect("res://Shared/press.ogg",2)
+	SoundController.pub_play_effect("res://Shared/press.wav",2)
 	emit_signal("is_pressed")
 	
 
