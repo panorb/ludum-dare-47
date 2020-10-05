@@ -3,6 +3,7 @@ extends Control
 onready var animation_player := $AnimationPlayer
 onready var tween := $Tween
 onready var inbox_notification := $Notification/InboxNotification
+onready var mouse_hotspot = $MouseHotspot
 
 export var trans_type = Tween.TRANS_CIRC
 export(float) var notification_scaling_time := 0.3
@@ -16,10 +17,9 @@ var current_letter_idx := 0
 
 onready var letter = $CenterView/Letter
 
-func _ready():
-	show_inbox_notification()
-
 func show_inbox_notification():
+	inbox_notification.visible = true
+	mouse_hotspot.visible = true
 	tween.interpolate_property(inbox_notification, ":rect_scale", Vector2(0.01, 0.01), notifaction_min_scale, 3*notification_scaling_time, trans_type)
 	tween.start()
 

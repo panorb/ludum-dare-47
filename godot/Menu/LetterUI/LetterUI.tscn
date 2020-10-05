@@ -28,6 +28,7 @@ margin_right = 1927.0
 margin_bottom = 1087.0
 
 [node name="Notification" type="HBoxContainer" parent="."]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -65,6 +66,7 @@ rect_min_size = Vector2( 8, 0 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="MouseHotspot" parent="." instance=ExtResource( 1 )]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 margin_left = -301.0
