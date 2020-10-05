@@ -18,7 +18,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 offset = Vector2( 260.213, 500.019 )
 
-[node name="EndPrefep" parent="." instance=ExtResource( 4 )]
+[node name="EndAnd" parent="." instance=ExtResource( 4 )]
 margin_left = 60.0
 margin_top = 640.0
 margin_right = 982.0
@@ -96,12 +96,12 @@ position = Vector2( 125, 325 )
 
 [node name="DecoWheel3" parent="DecoWheels" instance=ExtResource( 2 )]
 position = Vector2( 125, 525 )
-[connection signal="got_changed" from="EndPrefep" to="." method="_on_EndPrefep_got_changed"]
+[connection signal="got_changed" from="EndAnd" to="." method="_on_EndPrefep_got_changed"]
 [connection signal="got_pressed" from="Buttons/Button1" to="Mid/MidXor" method="_on_Button1_got_pressed"]
 [connection signal="got_pressed" from="Buttons/Button2" to="Mid/MidXor" method="_on_Button2_got_pressed"]
 [connection signal="got_pressed" from="Buttons/Button3" to="Mid/MidAnd" method="_on_Button3_got_pressed"]
 [connection signal="got_pressed" from="Buttons/Button4" to="Mid/MidAnd" method="_on_Button4_got_pressed"]
-[connection signal="got_changed" from="Mid/MidAnd" to="EndPrefep" method="_on_MidAnd_got_changed"]
+[connection signal="got_changed" from="Mid/MidAnd" to="EndAnd" method="_on_MidAnd_got_changed"]
 [connection signal="got_changed" from="Mid/MidAnd" to="." method="_on_MidAnd_got_changed"]
-[connection signal="got_changed" from="Mid/MidXor" to="EndPrefep" method="_on_MidXor_got_changed"]
+[connection signal="got_changed" from="Mid/MidXor" to="EndAnd" method="_on_MidXor_got_changed"]
 [connection signal="got_changed" from="Mid/MidXor" to="." method="_on_MidXor_got_changed"]
