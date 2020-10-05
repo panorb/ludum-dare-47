@@ -56,7 +56,7 @@ func test_if_active():
 			set_active(true)
 			return
 	elif type == "OR":
-		if (port_one_active or port_two_active) and not (port_one_active and port_two_active):
+		if (port_one_active or port_two_active):
 			set_active(true)
 			return
 	set_active(false)
@@ -130,3 +130,125 @@ func _on_ButtonTwo_forced_press(value):
 
 func _on_ButtonOne_forced_press(value):
 	_on_Button1_got_pressed(value)
+
+
+func _on_ButtonOne_got_pressed(value):
+	_on_Button1_got_pressed(value)
+
+
+func _on_ButtonTwo_got_pressed(value):
+	_on_Button2_got_pressed(value)
+
+
+func _on_ButtonThree_got_pressed(value):
+	_on_Button3_got_pressed(value)
+
+
+func _on_ButtonFour_got_pressed(value):
+	_on_Button4_got_pressed(value)
+
+
+func _on_ButtonFive_forced_press(value):
+	_on_Button1_got_pressed(value)
+
+
+func _on_ButtonSix_forced_press(value):
+	_on_Button2_got_pressed(value)
+
+
+func _on_ButtonSeven_forced_press(value):
+	_on_Button3_got_pressed(value)
+
+
+func _on_ButtonEight_forced_press(value):
+	_on_Button4_got_pressed(value)
+
+
+func _on_ButtonFive_got_pressed(value):
+	_on_Button1_got_pressed(value)
+
+
+func _on_ButtonSix_got_pressed(value):
+	_on_Button2_got_pressed(value)
+
+
+func _on_ButtonSeven_got_pressed(value):
+	_on_Button3_got_pressed(value)
+
+
+func _on_ButtonEight_got_pressed(value):
+	_on_Button4_got_pressed(value)
+
+
+func _on_ButtonNine_forced_press(value):
+	_on_Button1_got_pressed(value)
+
+
+func _on_ButtonTen_forced_press(value):
+	if name == "MidSecondRowThree":
+		_on_Button1_got_pressed(value)
+	else:
+		_on_Button2_got_pressed(value)
+
+
+func _on_ButtonEleven_forced_press(value):
+	_on_Button3_got_pressed(value)
+
+
+func _on_ButtonTwelfe_forced_press(value):
+	_on_Button4_got_pressed(value)
+
+
+func _on_ButtonNine_got_pressed(value):
+	_on_Button1_got_pressed(value)
+
+
+func _on_ButtonTen_got_pressed(value):
+	if name == "MidSecondRowThree":
+		_on_Button1_got_pressed(value)
+	else:
+		_on_Button2_got_pressed(value)
+
+
+func _on_ButtonEleven_got_pressed(value):
+	_on_Button3_got_pressed(value)
+
+
+func _on_ButtonTwelfe_got_pressed(value):
+	_on_Button4_got_pressed(value)
+
+
+func _on_MidFirstRowOne_got_changed(is_active):
+	_on_Button1_got_pressed(is_active)
+
+
+func _on_MidFirstRowTwo_got_changed(is_active):
+	_on_Button2_got_pressed(is_active)
+
+
+func _on_MidFirstRowThree_got_changed(is_active):
+	_on_Button1_got_pressed(is_active)
+
+
+func _on_MidFirstRowFour_got_changed(is_active):
+	_on_Button2_got_pressed(is_active)
+
+
+func _on_MidFirstRowSix_got_changed(is_active):
+	_on_Button2_got_pressed(is_active)
+
+
+func _on_MidSecondRowOne_got_changed(is_active):
+	_on_Button1_got_pressed(is_active)
+
+
+func _on_MidSecondRowTwo_got_changed(is_active):
+	_on_Button2_got_pressed(is_active)
+
+
+func _on_MidFirstRowFive_got_changed(is_active):
+	_on_Button1_got_pressed(is_active)
+
+
+func _on_MidSecondRowThree_got_changed(is_active):
+	_on_Button2_got_pressed(is_active)

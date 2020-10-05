@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleFour/RecordPlayerPuzzleFour.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Shared/MouseHotspot/MouseHotspot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/RecordPlayerPuzzle/PuzzleFour/puzzle_four_controller.gd" type="Script" id=3]
+
+[node name="PuzzleFourController" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="RecordPlayerPuzzleFour" parent="." instance=ExtResource( 1 )]
+
+[node name="MouseHotspot" parent="." instance=ExtResource( 2 )]
+margin_left = 4.23779
+margin_right = -475.762
+margin_bottom = -160.0
+[connection signal="is_active" from="RecordPlayerPuzzleFour" to="." method="_on_RecordPlayerPuzzleFour_is_active"]
+[connection signal="got_pressed" from="RecordPlayerPuzzleFour/ButtonFirstRow/ButtonOne" to="." method="_on_ButtonOne_got_pressed"]
+[connection signal="got_pressed" from="RecordPlayerPuzzleFour/ButtonFirstRow/ButtonTwo" to="." method="_on_ButtonTwo_got_pressed"]
+[connection signal="got_pressed" from="RecordPlayerPuzzleFour/ButtonFirstRow/ButtonThree" to="." method="_on_ButtonThree_got_pressed"]
+[connection signal="got_pressed" from="RecordPlayerPuzzleFour/ButtonFirstRow/ButtonFour" to="." method="_on_ButtonFour_got_pressed"]
+[connection signal="got_pressed" from="RecordPlayerPuzzleFour/ButtonSecondRow/ButtonSix" to="." method="_on_ButtonSix_got_pressed"]
+[connection signal="got_pressed" from="RecordPlayerPuzzleFour/ButtonSecondRow/ButtonEight" to="." method="_on_ButtonEight_got_pressed"]
+[connection signal="got_pressed" from="RecordPlayerPuzzleFour/ButtonThirdRow/ButtonTen" to="." method="_on_ButtonTen_got_pressed"]
+[connection signal="got_pressed" from="RecordPlayerPuzzleFour/ButtonThirdRow/ButtonEleven" to="." method="_on_ButtonEleven_got_pressed"]
+[connection signal="is_pressed" from="MouseHotspot" to="." method="_on_MouseHotspot_is_pressed"]
+
+[editable path="RecordPlayerPuzzleFour"]
